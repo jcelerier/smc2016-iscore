@@ -25,11 +25,10 @@
 
 
 %user defined variables
-\def\papertitle{PAPER TEMPLATE FOR THE
-2016 SOUND AND MUSIC COMPUTING CONFERENCE}
-\def\firstauthor{First author}
-\def\secondauthor{Second author}
-\def\thirdauthor{Third author}
+\def\papertitle{Rethinking the audio workstation : tree-based sequencing with i-score and the LibAudioStream}
+\def\firstauthor{Jean-Michaël Celerier}
+\def\secondauthor{Myriam Desainte-Catherine}
+\def\thirdauthor{Stéphane Letz}
 
 % adds the automatic
 % Saves a lot of ouptut space in PDF... after conversion with the distiller
@@ -135,197 +134,41 @@ Please write about 150--200 words that specifically highlight the purpose of you
 its context, and provide a brief synopsis of your results.
 Avoid equations in this part.
 \end{abstract}
-%
+\section{Introduction}
+\section{Existing works}
+- Audiographe, etc.
 
-\section{Introduction}\label{sec:introduction}
-This template includes all the information about formatting manuscripts for 
-the SMC2016 Conference.
-Please use \LaTeX{} templates when 
-preparing your submission.
-Please follow these guidelines to give the final proceedings a professional look.
-If you have any questions, please contact the SMC2016 organizers.
-This template can be downloaded from:
-\url{http://www.smc2016.net}.
+\section{Context}
+\subsection{Description i-score}
+- interactivité
+-> mapping and JS
 
-\section{Page size and format}\label{sec:page_size}
-Your paper must not exceed {\bf 8 pages},
-no matter if you are presenting orally or posterly.
-We \underline{strongly encourage}
-a paper length of {\bf 6 pages}.
-We will format the proceedings as
- \underline{portrait A4-size paper} \underline{(21.0cm x 29.7cm)}.
-All material on each page should fit within a rectangle of 17.2cm x 25.2cm,
-centred on the page, beginning 2.0cm from the top of the page and ending 
-with 2.5cm from the bottom.
-The left and right margins should be 1.9cm.
-The text should be in two 8.2cm columns with a 0.8cm gutter.
-All text must be in a two-column format, and justified.
-If you prepare your document by cutting and pasting into this one,
-then you should not have to worry, 
-unless there is something strange with your \LaTeX{} interpreter.
-So double check.
-If you have any questions, please contact the SMC2016 organizers.
+\subsection{Description LibAudioStream}
 
-\section{Typeset Text}\label{sec:typeset_text}
+\section{Audio novelties}
+-> donner sémantique de flux des Stream Group, Send, Return.
 
-\subsection{Normal or Body Text}\label{subsec:body}
-Please use a 10pt (point) Times font. 
-Use sans-serif or non-proportional fonts
-only for special purposes, 
-such as distinguishing source code.
-The first paragraph in each section should not be indented, 
-but all other paragraphs should be.
+-> Processus audio dans i-score : 
+- FX => Supports FaUST.
+- Instrument.
+- Send.
+- Return.
+- Mixing.
+- Hiérarchie à profondeur arbitraire.
 
-\subsection{Title and Authors}
-As you can see above, the title is 16pt Times, bold, upper case, and centred.
-The names of the authors are also centred.
-The lead author's name is to be listed first (left-most), and the co-authors' 
-names after. If the addresses for all authors are the same, include the 
-address only once, centred. If the authors have different addresses, put the 
-addresses, evenly spaced, under each authors' name.
+Faire graphe pour une Time Constraint et donner un exemple avec effets appliqués sur scénario.
 
-\subsection{First Page Copyright Notice}
-Please leave the copyright notice exactly as it appears in the lower 
-left-hand corner of the first page. It is set in 8pt Times, if you are wondering.
+\section{Routing, multi-channels, etc.}
+-> mettre maquettes track mix
+\section{UI}
 
-\subsection{Page Numbering, Headers and Footers}
-Do not include headers, footers or page numbers in your submission.
-We add these electronically when we assemble the publications
-into the proceedings.
-
-\section{Headings}
-First level headings are in Times 12pt bold,
-centred with 1 line of space above the section head, and 1/2 space below it.
-For a section header immediately followed by a subsection header, the space 
-should be merged.
-
-\subsection{Second Level Headings}
-Second level headings are in Times 10pt bold, flush left,
-with 1 line of space above the section head, and 1/2 space below it.
-The first letter of each significant word is capitalized.
-
-\subsubsection{Third Level Headings}
-Third level headings are in Times 10pt italic, flush left,
-with 1/2 line of space above the section head, and 1/2 space below it.
-The first letter of significant words is capitalized.
-
-\subsubsection{Level Headings Beyond the Third}
-We strongly discourage any use of
-more than three levels of headings.
-Also, if you have only one subsection in a section,\footnote{Just like this section.}
-then you should reorganize it into one section.
-
-\section{Floats and equations}
-
-\subsection{Equations}
-Equations of importance, 
-or to which you refer later,
-should be placed on separated lines and numbered.
-The number should be on the right side, in parentheses.
-\begin{equation}
-r=\sqrt[13]{3}
-\label{eq:BP}
-\end{equation}
-Refer to equations like so:
-Equation (\ref{eq:BP}) is of particular 
-interest in Hamburg.
-
-\subsection{Figures, Tables and Captions}
-\begin{table}[t]
- \begin{center}
- \begin{tabular}{|l|l|}
-  \hline
-  String value & Numeric value \\
-  \hline
-  Moin! SMC & 2016 \\
-  \hline
- \end{tabular}
-\end{center}
- \caption{Table captions should be placed below the table, exactly like this,
- but using words different from these.}
- \label{tab:example}
-\end{table}
-
-All artwork must be centred, neat, clean and legible.
-And if you include figures in your paper, instead of artwork,
-please make sure they are centred, neat, clean
-and completely legible without super-resolution imaging.
-All lines should be thick and dark enough to be reproducible
-even by a facsimile machine;
-and figures should not be hand-drawn unless your hand is robotically precise.
-Since the proceedings are distributed in electronic form only, 
-we allow colour to be used in figures;
-but please check that your figures are 
-coherent if they are printed in black-and-white.
-For instance, to make your figures zing in several conditions,
-vary line thickness, style, and colour at the same time.
-
-Numbers and captions of figures and tables always appear below the figure/table.
-Leave 1 line space between the figure or table and the caption.
-Figure and tables are numbered consecutively. 
-Captions should be Times 10pt.
-And try to make your captions sufficiently explain your figures and tables.
-Place tables/figures in text as close to the reference as possible, 
-and preferably at the top of the page.
-
-Always refer to tables and figures in the main text, for example:
-see Fig. \ref{fig:example} and \tabref{tab:example}.
-Figures and tables may extend across both columns to a maximum width of 17.2cm.
-
-Vectorial figures are preferred, e.g., eps.
-When using \texttt{Matlab}, 
-export using either (encapsulated) Postscript or PDF format. 
-In order to optimize readability, 
-the font size of text within a figure should be no smaller than
-that of footnotes (8pt font-size). 
-If you use bitmap figures, make sure that 
-the resolution is high enough for print quality. 
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.6\columnwidth]{figure}
-\caption{Figure captions should be placed below the figure, 
-exactly like this.\label{fig:example}}
-\end{figure}
-
-%\begin{figure}[t]
-%\figbox{
-%\subfloat[][]{\includegraphics[width=60mm]{figure}\label{fig:subfigex_a}}\\
-%\subfloat[][]{\includegraphics[width=80mm]{figure}\label{fig:subfigex_b}}
-%}
-%\caption{Here's an example using the subfig package.\label{fig:subfigex} }
-%\end{figure}
-
-\subsection{Footnotes}
-You can indicate footnotes with a number in the text,\footnote{This is a footnote.}
-but try to work the content into the main text.
-Use 8pt font-size for footnotes. 
-Place the footnotes at the bottom of the page 
-on which they appear. 
-Precede the footnote with a 0.5pt horizontal rule.
-
-\section{Citations}
-List all bibliographical references at the end of your paper,
-inside a section named ``REFERENCES''.
-Order and number the references in order of appearance. 
-Do not list references that do not appear in the text.
-Reference numbers in the text should appear within square brackets, such as 
-in~\cite{Someone:00} or~\cite{Someone:00,Someone:04,Someone:09}.
-The reference format is the standard IEEE one. 
-We highly recommend you use BibTeX 
-to generate the reference list.
-
-\section{Conclusions}
-To finish your full-length paper, end it with a conclusion;
-and after careful editing and a final spell-cheek,
-submit it through the Conference Web Submission System. 
-\underline{Do not} send papers directly by e-mail.
-%
+\section{Conclusion}
+-> lackluster areas : 
+- MIDI support (but OSC)
+- no musical time information : first aimed for artists, 
+but improvements could be the waiting of triggering on some measure of time.
 \begin{acknowledgments}
-You may acknowledge people, projects, 
-funding agencies, etc. 
-which can be included after the second-level heading
-``Acknowledgments'' (with no numbering).
+    ANRT, Blue Yeti, Magali
 \end{acknowledgments} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
