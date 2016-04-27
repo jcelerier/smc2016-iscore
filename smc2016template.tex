@@ -148,6 +148,8 @@ Avoid equations in this part.
 \section{Audio novelties}
 -> donner sémantique de flux des Stream Group, Send, Return.
 
+- Comme la durée de chaque contrainte peut varier avec le ralentissement, on utilise principalement 
+des dates symboliques
 -> Processus audio dans i-score : 
 - FX => Supports FaUST.
 - Instrument.
@@ -157,6 +159,17 @@ Avoid equations in this part.
 - Hiérarchie à profondeur arbitraire.
 
 Faire graphe pour une Time Constraint et donner un exemple avec effets appliqués sur scénario.
+Expliquer graphe hiérarchique de dépendances : penser au cas ou un a un return dans une hiérarchie puis un send à un niveau supérieur; il faut faire le grpahe de A à Z et s'assurer qu'il ne soit pas cyclique
+
+1er cas : 
+Un son avec une piste d'effets.
+
+2eme cas : scénario hiérarchique, boucle
+
+Cas de la boucle avec un coup A, un coup B selon la condition ? 
+-> exécution d'un timenode doit reset le flux.
+
+Piste send / return : permet de maintenir les queues de reverb.
 
 \section{Routing, multi-channels, etc.}
 -> mettre maquettes track mix
@@ -167,6 +180,9 @@ Faire graphe pour une Time Constraint et donner un exemple avec effets appliqué
 - MIDI support (but OSC)
 - no musical time information : first aimed for artists, 
 but improvements could be the waiting of triggering on some measure of time.
+- "play from anywhere"
+- audio input ?
+- correction de latence ?
 \begin{acknowledgments}
     ANRT, Blue Yeti, Magali
 \end{acknowledgments} 
