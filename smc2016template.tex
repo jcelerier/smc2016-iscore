@@ -9,6 +9,7 @@
 \usepackage{ifpdf}
 \usepackage[english]{babel}
 \usepackage{todonotes}
+\usepackage{listings}
 \usepackage{cite}
 
 %%%%%%%%%%%%%%%%%%%%%%%% Some useful packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,6 +140,7 @@ Avoid equations in this part.
 \section{Introduction}
 
 Progression du papier
+-> définitions : audio sequencing, workstations, etc.
 -> poser le problème
 -> définitions et présentation des outils
 -> extensions de la libaudiostream
@@ -169,15 +171,123 @@ allows to start and stop the execution of streams at an arbitrary date.
 
 
 \subsection{Description LibAudioStream}
--> donner sémantique de flux.
--> donner example flux stream
+-> donner sémantique des flux.
+-> players
+-> donner example flux stream avec effet faust.
+\section{Audio authoring in i-score}
 
-\section{Presentation of the system}
+\section{Presentation of the audio system}
+In this section, we will explain the audio routing 
+features offered by the software.
+
+First, we introduce new audio streams that allow a LibAudioStream
+expression to encapsulate the execution of a virtual audio player, 
+in order to allow for hierarchy.
+
+We make the choice to allow for hierarchy by mixing the played streams together.
+\todo{expliquer pourquoi}
+
+Then, we present the concept of audio buses integrated to the LibAudioStream,
+with two special Send and Return streams.
+
 \subsection{Group audio stream}
+In order to be able to apply hierarchical effects on the streams, 
+we have to introduce a way to use hierarchy in the LibAudioStream.
+
+Two elements are necessary : 
+\begin{itemize}
+	\item A particular audio player that will be able to sequence the starting and stopping 
+	of interactive sounds.
+	Such players already exist in the LibAudioStream but are tailored for direct output to
+	the soundcard.
+	\item A way to introduce the Renderer into the stream system, so that it 
+	is able to be pulled like it would be by a real soundcard.
+\end{itemize}
+
+We introduce two new objects in the LibAudioStream : 
+\begin{itemize}
+	\item A Group player. This is a player whose processing function has to be called manually. 
+	Timekeeping supposes that it will be pulled in accordance at the clock rate
+	and samplerate of the soundcard.
+	\item A Group audiostream. This particular audiostream, of infinite length, 
+	allows to introduce a Group player in a series of chained streams.
+	For instance : \lstinline{(mix (fx aPlayer anFx)) (fx anotherPlayer anotherFx)}
+\end{itemize}
+
+The execution time of the hierarchized objects will be relative to the start time of the Group audiostream.
+The sound of the objects will be mixed together.
+
 \subsection{Send and return audio streams}
+In order to be able to create rich effect graphs, we introduce another couple of objects 
+working in tandem.
+
+The Send audiostream by itself is a passthrough : it just pulls the stream it owns.
+The Return audiostream, constructed with a Send stream, will make a copy of the data in 
+the send stream and allow it to be used by the processing chain it is part of.
+This means that a sound source can be sent to sound effects in parallel, for instance.
+
+ %TODO multithread ??
 - Flux infinis
+- nécessité de tirer les flux; il est possible de faire un adapteur ?
+
+\begin{figure}
+	\includegraphics[width=0.45\textwidth]{figures/graph2.eps}
+	\caption{Possible mixing with the Send and Return objects. An arrow from A to B means that B pulls the audio data from A.}
+\end{figure}
+
 
 \subsection{Stream graph}
+One problem caused by the presence of routing is that it is possible 
+to have a data loop : if a Send is fed its own data through a Return, 
+the output would be garbage data : the Return would be asked to read 
+the currently requested output from the Send which has not been written yet.
+
+To prevent this, we create a graph where : 
+\begin{itemize}
+	\item Vertices are the sound generating elements : audio file reader, etc.
+	\item Edges are the connections going from a send to a return.
+\end{itemize} 
+
+The graph, implemented with the Boost.Graph\todo{CITE} library can then be used to 
+guarantee the acyclicity, and return an user error if that is not the case.
+
+We provide here the algorithm to build the graph.
+
+\todo{Disambiguate the user-created sends and the sends required for the model}
+%\paragraph{Vertice creation}
+Vertices are created recursively from the Time Constraints in i-score.
+First, we iterate through all the processes of the given constraint.
+If the process is hierarchical (Scenario, Loop), then we call the algorithm recursively on the process.
+In the case of the Scenario, it means that we call recursively on all its Constraints; in the case of the Loop, we call recursively on its loop pattern Constraint.
+In both case, we create a Group vertice to model the process.
+Then, we create inner Sends for all the streams and a vertice for the Constraint itself.
+
+\begin{figure}
+	\includegraphics[width=0.45\textwidth]{figures/graph1.eps}
+	\caption{Translation of the Time Constraint of fig. TODO in a graph.
+		The edges in black represent the intra-Constraint connections. 
+		The edges in blue (resp. orange) represent a connection to a visible output of 
+		the Constraint.}
+\end{figure}
+
+As can be seen, there can be an ordering between nodes of the graph : the parentmost vertice
+has to be pulled before the others to reflect the causality.
+\todo{Comparer à Ableton ou il est possible pour chaque piste de choisir son entrée et sa sortie.}
+
+Inside a Time Constraint, causality also has to be enforced. 
+Since a mixing bus is provided, we have to ensure that an effect bus cannot be routed in 
+itself in a loop. 
+To prevent this at the user interface level, the vertical order of effect chains is used : 
+if Effect Chain 1 comes before Effect Chain 2, then Effect Chain 1 can be routed into Effect Chain 2, but not the contrary.
+
+\todo{Dire qu'on mixe avant de rentrer dans une chaine d'effets}
+
+\subsection{Stream creation}
+- dire qu'on connecte chaque StartStream et chaque StopStream à un timenode.
+\subsubsection{Scenario}
+\subsubsection{Loop}
+\subsubsection{Time Constraint}
+
 -> donner sémantique de flux des Stream Group, Send, Return.
 
 - Comme la durée de chaque contrainte peut varier avec le ralentissement, on utilise principalement 
@@ -207,11 +317,13 @@ Piste send / return : permet de maintenir les queues de reverb.
 
 \subsection{Routing, multi-channels, etc.}
 -> mettre maquettes track mix
+
 \section{Example}
 \subsection{UI}
 -> capture d'écran
 Faire vue scénario et sa traduction en graphe de routage 
 
+\subsection{Temporal effect graphs}
 \section{Conclusion}
 -> lackluster areas : 
 - MIDI support (but OSC)
@@ -220,6 +332,7 @@ but improvements could be the waiting of triggering on some measure of time.
 - "play from anywhere"
 - audio input ?
 - correction de latence ?
+- pour l'instant pas d'optimisations dans des cas simples (e.g. pas besoin de mixage)
 \begin{acknowledgments}
     ANRT, Blue Yeti, Magali
 \end{acknowledgments} 
