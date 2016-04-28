@@ -21,16 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{Someone:00}
-A.~Someone, B.~Someone, and C.~Someone, ``The title of the conf. paper,'' in
-  \emph{Proc. Int. Conf. Sound and Music Computing}, Porto, 2009, pp. 213--218.
+\bibitem{bell2015skeuomorphism}
+A.~Bell, E.~Hein, and J.~Ratcliffe, ``Beyond skeuomorphism: The evolution of
+  music production software user interface metaphors.''
 
-\bibitem{Someone:04}
-X.~Someone and Y.~Someone, \emph{The Title of the Book}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Springer-Verlag, 2010.
-
-\bibitem{Someone:09}
-A.~Someone, B.~Someone, and C.~Someone, ``The title of the journal paper,'' in
-  \emph{J. New Music Research}, 2008, pp. 111--222.
+\bibitem{letzlibaudiostream}
+S.~Letz \emph{et~al.}, ``The libaudiostream library, 2012.''
 
 \end{thebibliography}

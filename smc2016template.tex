@@ -138,19 +138,46 @@ Avoid equations in this part.
 \end{abstract}
 
 \section{Introduction}
+Software audio sequencers are generally considered to be digital versions 
+of the traditional tools that are used in a recording studio : tape recorders, 
+mixing desks, effect racks\dots
 
-Progression du papier
--> définitions : audio sequencing, workstations, etc.
--> poser le problème
--> définitions et présentation des outils
--> extensions de la libaudiostream
--> traduction de i-score en expression libaudiostream
+Most of the existing software metaphors follow this very closely, with 
+concepts of tracks, buses, linear time, which are a skeuomorphic reinterpretation of the multi-track tape recorder~\cite{bell2015skeuomorphism}.
+At the other side of the music creation spectrum, entirely interaction-oriented tools, 
+like Max/MSP, Pure Data, Csound, or SuperCollider, allow to create musical works in programming-oriented 
+environments.
+In-between, one can find tools with limited interaction capabilities but full-fledged audio sequencing support, 
+like Ableton Live, or Bitwig Studio.
+The interaction lies in the triggering of loops and the ability to change the speed on the fly but is mostly separate from the "traditional" sequencer.
+
+In this paper, we present a new tree-based approach to interactive audio sequencing.
+By exposing the LibAudioStream's audio engine to the interactive control sequencer i-score, 
+we provide an audio sequencing software that allows to author music in a timeline 
+with the possibility to arbitrarily nest sounds and effects, trigger sounds interactively 
+while keeping the logical coherency wanted by the composer, and arrange audio effects in a temporal graph.
+
+We will first present the existing works in advanced audio sequencing and workstations, 
+and give a brief presentation of both i-score and the LibAudioStream.
+Then, the new objects introduced in order to integrate these software together, allowing 
+for rich audio routing capabilities, will be explained.
+Finally, examples of usage in the graphical interface of i-score will be provided.
+
+%Progression du papier
+%-> définitions : audio sequencing, workstations, etc.
+%-> poser le problème
+%-> définitions et présentation des outils
+%-> extensions de la libaudiostream
+%-> traduction de i-score en expression libaudiostream
 
 
 \section{Existing works}
 - Audiographe, etc. : Jamoma Audiograph, Logic
-- Ableton Live
+- Ableton Live, Bitwig
 - Reaper
+- DRILE
+- Trackers (FastTracker, ...)
+- Reprendre article Bell
 
 \section{Context}
 In this section, we will present the two tools that are used to achieve 
@@ -160,11 +187,33 @@ in time, and gives the possibility to introduce interaction points and
 conditions in the score.
 The detailed execution semantics are given in \cite{celerier2015ossia}.
 
-The LibAudioStream provides the ability to write rich audio expression
-by creating and combining streams. The notion of symbolic date, introduced in \todo{cite}
+The LibAudioStream\cite{letzlibaudiostream} provides the ability to write rich audio expression
+by creating and combining streams. The notion of symbolic date, introduced in an extension of the library,
 allows to start and stop the execution of streams at an arbitrary date.
 
 \subsection{Description i-score}
+i-score is at its core a sequencer for parameters. 
+Its main use is to communicate and orchestrate other software in a timely manner, 
+through the OSC protocol.
+The software can send automations, messages at a given point in time, call JavaScript 
+functions, in a sequenced environment.
+It supports arbitrary nesting : a score can be embedded in another recursively.
+This is similar to the notion of group tracks in many other sequencers, but 
+there is no limit of depth. 
+Besides, there is no notion of "track" per se; rather, the composer works with 
+temporal intervals which contains arbitrary data that can be provided by plug-ins.
+There are multiple possibilities of interactivity in i-score : trigger points, conditions, 
+mappings.
+\begin{itemize}
+    \item Trigger points allow to block and synchronize the score until a specific event happens.
+    For instance, when an OSC parameter fulfills a condition, e.g. \lstinline|/a/b >= 3.14|, then 
+    a part of the score can continue.
+    \item Conditions allow to execute or disable part of the score according to a boolean condition.
+    It makes if-then-else or switch-case programming construct easy to implement in a temporal way.
+    \item Mappings allow to map an input parameter to an output parameter, with a transfer function applied to the input.
+\end{itemize}
+
+
 - interactivité
 -> mapping and JS
 -> donner example scénario i-score
@@ -218,17 +267,24 @@ The execution time of the hierarchized objects will be relative to the start tim
 The sound of the objects will be mixed together.
 
 \subsection{Send and return audio streams}
-In order to be able to create rich effect graphs, we introduce another couple of objects 
-working in tandem.
+In order to be able to create rich effect graphs, we introduce another couple of objects.
 
 The Send audiostream by itself is a passthrough : it just pulls the stream it owns.
+It posseses the same definition : same length, same number of channels\dots
 The Return audiostream, constructed with a Send stream, will make a copy of the data in 
 the send stream and allow it to be used by the processing chain it is part of.
 This means that a sound source can be sent to sound effects in parallel, for instance.
 
- %TODO multithread ??
-- Flux infinis
-- nécessité de tirer les flux; il est possible de faire un adapteur ?
+The Return stream is infinite in length : to allow for long-lasting audio effects 
+like reverb queues or delays, we suppose that we can pull the data from the Send stream at any point in time.
+If a Return stream tries to fetch the data of a Send stream that has not started yet, or that has already finished, a buffer of silence is provided instead.
+
+Due to the imposed acyclicity of the graph, some level of parallel processing may be achieved, 
+as long as causality is respected between nodes. 
+For instance, if two Returns with each their own effect chain are connected to a Send, it is possible 
+to compute these returns on different threads after the current buffer of the Send has been processed.
+
+An important point is that the Send stream must itself be pulled regularly by being played as a sound, either directly or by a stream that would encapsulate it.
 
 \begin{figure}
 	\includegraphics[width=0.45\textwidth]{figures/graph2.eps}
