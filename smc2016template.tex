@@ -8,6 +8,7 @@
 \usepackage{times}
 \usepackage{ifpdf}
 \usepackage[english]{babel}
+\usepackage{todonotes}
 \usepackage{cite}
 
 %%%%%%%%%%%%%%%%%%%%%%%% Some useful packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,11 +55,11 @@
    ]{hyperref}
   %\pdfcompresslevel=9
 
-  \usepackage[pdftex]{graphicx}
+  \usepackage{graphicx}
   % declare the path(s) where your graphic files are and their extensions so 
   %you won't have to specify these with every instance of \includegraphics
-  \graphicspath{{./figures/}}
-  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+%  \graphicspath{{./figures/}}
+%  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 
   \usepackage[figure,table]{hypcap}
 
@@ -134,14 +135,18 @@ Please write about 150--200 words that specifically highlight the purpose of you
 its context, and provide a brief synopsis of your results.
 Avoid equations in this part.
 \end{abstract}
+
 \section{Introduction}
 
 Progression du papier
+-> poser le problème
 -> définitions et présentation des outils
 -> extensions de la libaudiostream
 -> traduction de i-score en expression libaudiostream
+
+
 \section{Existing works}
-- Audiographe, etc.
+- Audiographe, etc. : Jamoma Audiograph, Logic
 - Ableton Live
 - Reaper
 
@@ -154,7 +159,8 @@ conditions in the score.
 The detailed execution semantics are given in \cite{celerier2015ossia}.
 
 The LibAudioStream provides the ability to write rich audio expression
-by combining streams.
+by creating and combining streams. The notion of symbolic date, introduced in \todo{cite}
+allows to start and stop the execution of streams at an arbitrary date.
 
 \subsection{Description i-score}
 - interactivité
@@ -163,9 +169,15 @@ by combining streams.
 
 
 \subsection{Description LibAudioStream}
+-> donner sémantique de flux.
 -> donner example flux stream
 
-\section{Audio novelties}
+\section{Presentation of the system}
+\subsection{Group audio stream}
+\subsection{Send and return audio streams}
+- Flux infinis
+
+\subsection{Stream graph}
 -> donner sémantique de flux des Stream Group, Send, Return.
 
 - Comme la durée de chaque contrainte peut varier avec le ralentissement, on utilise principalement 
@@ -192,11 +204,13 @@ Cas de la boucle avec un coup A, un coup B selon la condition ?
 
 Piste send / return : permet de maintenir les queues de reverb.
 
-\section{Routing, multi-channels, etc.}
--> mettre maquettes track mix
 
-\section{UI}
+\subsection{Routing, multi-channels, etc.}
+-> mettre maquettes track mix
+\section{Example}
+\subsection{UI}
 -> capture d'écran
+Faire vue scénario et sa traduction en graphe de routage 
 
 \section{Conclusion}
 -> lackluster areas : 
