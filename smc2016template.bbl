@@ -31,4 +31,9 @@ S.~Letz \emph{et~al.}, ``The libaudiostream library,'' 2012.
 \bibitem{seebach2001cranky}
 P.~Seebach, ``The cranky user: The principle of least astonishment,'' 2001.
 
+\bibitem{siek2001boost}
+J.~G. Siek, L.-Q. Lee, and A.~Lumsdaine, \emph{The Boost Graph Library: User
+  Guide and Reference Manual, Portable Documents}.\hskip 1em plus 0.5em minus
+  0.4em\relax Pearson Education, 2001.
+
 \end{thebibliography}

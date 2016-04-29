@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="156.24484"
-     inkscape:cy="-18.293942"
+     inkscape:zoom="1"
+     inkscape:cx="372.72467"
+     inkscape:cy="137.5828"
      inkscape:document-units="px"
      inkscape:current-layer="g4144"
      showgrid="false"
@@ -479,7 +479,7 @@
          font-style="normal"
          font-weight="700"
          font-size="10"
-         transform="translate(315.64981,349.05081)"
+         transform="translate(318.64981,351.05081)"
          style="font-style:normal;font-weight:700;font-size:10px;font-family:Ubuntu;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1">
         <text
            id="text4308"
@@ -490,19 +490,6 @@
            x="131"
            xml:space="preserve"
            style="font-style:normal;font-weight:700;font-size:10px;font-family:Ubuntu;fill:#000000;fill-opacity:1;stroke:none">Drums</text>
-      </g>
-      <g
-         id="g4310"
-         font-style="normal"
-         font-weight="700"
-         font-size="10"
-         transform="translate(315.64981,349.05081)"
-         style="font-style:normal;font-weight:700;font-size:10px;font-family:Ubuntu;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.29803898">
-        <polyline
-           id="polyline4312"
-           points="0,30 304,30 "
-           vector-effect="none"
-           style="fill:none" />
       </g>
       <g
          id="g4314"
@@ -640,7 +627,7 @@
          font-style="normal"
          font-weight="400"
          font-size="9"
-         transform="translate(315.64981,379.05081)"
+         transform="matrix(0.99341922,0,0,1,317.14261,379.05081)"
          style="font-style:normal;font-weight:400;font-size:9px;font-family:'Sans Serif';fill:#008080;fill-opacity:1;stroke:#c0c0c0;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1">
         <path
            id="path4358"
@@ -793,7 +780,7 @@
          font-weight="400"
          font-size="30"
          transform="translate(362.89285,480.63456)"
-         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:none;stroke:#c0c0c0;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1">
+         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;fill-opacity:1">
         <text
            id="text4402"
            font-style="normal"
@@ -802,9 +789,9 @@
            y="36"
            x="54.484402"
            xml:space="preserve"
-           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#c0c0c0;fill-opacity:1;stroke:none"
+           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
            sodipodi:linespacing="125%"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke:none;stroke-opacity:1;fill:#000000;fill-opacity:1"
              id="tspan4927">Fx Chain 1</tspan></text>
       </g>
       <g
@@ -923,7 +910,7 @@
          font-weight="400"
          font-size="30"
          transform="translate(339.50393,533.63456)"
-         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:none;stroke:#c0c0c0;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1">
+         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;fill-opacity:1">
         <text
            id="text4438"
            font-style="normal"
@@ -932,9 +919,9 @@
            y="34"
            x="76.51207"
            xml:space="preserve"
-           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#c0c0c0;fill-opacity:1;stroke:none"
+           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
            sodipodi:linespacing="125%"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke:none;stroke-opacity:1;fill:#000000;fill-opacity:1"
              id="tspan4929">Fx Chain 2</tspan></text>
       </g>
       <g
@@ -1053,7 +1040,7 @@
          font-weight="400"
          font-size="30"
          transform="translate(338.15733,582.61206)"
-         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:none;stroke:#c0c0c0;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1">
+         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;fill-opacity:1">
         <text
            id="text4474"
            font-style="normal"
@@ -1062,9 +1049,9 @@
            y="36.5"
            x="62.25"
            xml:space="preserve"
-           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#c0c0c0;fill-opacity:1;stroke:none"
+           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
            sodipodi:linespacing="125%"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke:none;stroke-opacity:1;fill:#000000;fill-opacity:1"
              id="tspan4931">Send Process</tspan></text>
       </g>
       <g
@@ -1183,7 +1170,7 @@
          font-weight="400"
          font-size="30"
          transform="translate(335.437,636.18456)"
-         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:none;stroke:#c0c0c0;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1">
+         style="font-style:normal;font-weight:400;font-size:30px;font-family:Ubuntu;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;fill-opacity:1">
         <text
            id="text4510"
            font-style="normal"
@@ -1192,9 +1179,9 @@
            y="34"
            x="71.531197"
            xml:space="preserve"
-           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#c0c0c0;fill-opacity:1;stroke:none"
+           style="font-style:normal;font-weight:400;font-size:30px;line-height:125%;font-family:Ubuntu;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
            sodipodi:linespacing="125%"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke:none;stroke-opacity:1;fill:#000000;fill-opacity:1"
              id="tspan4933">Mix Process</tspan></text>
       </g>
       <g
