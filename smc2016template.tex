@@ -193,6 +193,7 @@ allows to start and stop the execution of streams at an arbitrary date.
 
 \subsection{Description i-score}
 i-score is at its core a sequencer for parameters. 
+
 Its main use is to communicate and orchestrate other software in a timely manner, 
 through the OSC protocol.
 The software can send automations, messages at a given point in time, call JavaScript 
@@ -202,6 +203,7 @@ This is similar to the notion of group tracks in many other sequencers, but
 there is no limit of depth. 
 Besides, there is no notion of "track" per se; rather, the composer works with 
 temporal intervals which contains arbitrary data that can be provided by plug-ins.
+
 There are multiple possibilities of interactivity in i-score : trigger points, conditions, 
 mappings.
 \begin{itemize}
@@ -214,10 +216,15 @@ mappings.
 \end{itemize}
 
 
-- interactivité
--> mapping and JS
--> donner example scénario i-score
-
+\begin{figure}
+	\centering
+	\includegraphics[width=0.45\textwidth]{figures/iscore-example.eps}
+	\caption{Example and temporal syntax for i-score. 
+		A full horizontal line means that the time must not be interrupted, 
+		while a dashed horizontal line means that the time of this Constraint can be interrupted to proceed 
+		to the following parts of the score according to an interactive event.}
+	\label{fig.mixsendreturn}
+\end{figure}
 
 \subsection{Description LibAudioStream}
 -> donner sémantique des flux.
@@ -234,6 +241,9 @@ expression to encapsulate the execution of a virtual audio player,
 in order to allow for hierarchy.
 
 We make the choice to allow for hierarchy by mixing the played streams together.
+This is done in accordance with the principle of least astonishment\cite{seebach2001cranky} for the composer : 
+in most audio software, the notion of grouping implies that the grouped sounds will be mixed 
+together and routed to a single audio bus.
 \todo{expliquer pourquoi}
 
 Then, we present the concept of audio buses integrated to the LibAudioStream,
@@ -253,7 +263,7 @@ Two elements are necessary :
 	is able to be pulled like it would be by a real soundcard.
 \end{itemize}
 
-We introduce two new objects in the LibAudioStream : 
+We introduce two matching objects in the LibAudioStream : 
 \begin{itemize}
 	\item A Group player. This is a player whose processing function has to be called manually. 
 	Timekeeping supposes that it will be pulled in accordance at the clock rate
@@ -287,11 +297,41 @@ to compute these returns on different threads after the current buffer of the Se
 An important point is that the Send stream must itself be pulled regularly by being played as a sound, either directly or by a stream that would encapsulate it.
 
 \begin{figure}
+	\centering
 	\includegraphics[width=0.45\textwidth]{figures/graph2.eps}
 	\caption{Possible mixing with the Send and Return objects. An arrow from A to B means that B pulls the audio data from A.}
+	\label{fig.mixsendreturn}
 \end{figure}
 
+\subsection{Audio processes}
+We provide multiple audio processes in i-score, that map 
+to lower-level audio streams.
 
+\begin{itemize}
+	\item Effect chain process : register multiple audio effects one after the other.
+	Currently only FaUST effects are supported.
+	\item Generator process : a sound generator, like a synthesizer. 
+	Currently only FaUST instruments are supported.
+	\item Sound file.
+	\item Explicit send and return processes.
+	\item Mixing process.
+\end{itemize}
+
+An important feature of audio workstations is the support for automation, that is, 
+controlling the value of a parameter over time, generally with piecewise continuous functions.
+In i-score automation is generally achieved by sending OSC messages to a remote software;
+the OSC message tree is modeled as an object tree.
+We introduce the loaded effect plug-in to this object tree, so that automations 
+and mappings are able to control audio effects and audio routing parameters such as volume.
+
+An example is given in fig.~\ref{fig.iscoreconstraint}.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.25\textwidth]{figures/iscore1.eps}
+	\caption{An example of a Time Constraint loaded with audio processes in i-score. 
+		Selecting a particular process shows a complete widget for editing the parameters.}
+	\label{fig.iscoreconstraint}
+\end{figure}
 \subsection{Stream graph}
 One problem caused by the presence of routing is that it is possible 
 to have a data loop : if a Send is fed its own data through a Return, 
@@ -319,11 +359,13 @@ In both case, we create a Group vertice to model the process.
 Then, we create inner Sends for all the streams and a vertice for the Constraint itself.
 
 \begin{figure}
-	\includegraphics[width=0.45\textwidth]{figures/graph1.eps}
-	\caption{Translation of the Time Constraint of fig. TODO in a graph.
+	\centering
+	\includegraphics[width=0.35\textwidth]{figures/graph1.eps}
+	\caption{Translation of the Time Constraint of fig.~\ref{fig.iscoreconstraint} in a graph.
 		The edges in black represent the intra-Constraint connections. 
 		The edges in blue (resp. orange) represent a connection to a visible output of 
-		the Constraint.}
+		the Constraint. The percentages represent the level of mixing of the stream in the return.}
+	\label{fig.graph}
 \end{figure}
 
 As can be seen, there can be an ordering between nodes of the graph : the parentmost vertice
@@ -337,7 +379,7 @@ To prevent this at the user interface level, the vertical order of effect chains
 if Effect Chain 1 comes before Effect Chain 2, then Effect Chain 1 can be routed into Effect Chain 2, but not the contrary.
 
 \todo{Dire qu'on mixe avant de rentrer dans une chaine d'effets}
-
+\todo{placement de la chaine de gain, time stretch, etc.}
 \subsection{Stream creation}
 - dire qu'on connecte chaque StartStream et chaque StopStream à un timenode.
 \subsubsection{Scenario}
@@ -348,14 +390,6 @@ if Effect Chain 1 comes before Effect Chain 2, then Effect Chain 1 can be routed
 
 - Comme la durée de chaque contrainte peut varier avec le ralentissement, on utilise principalement 
 des dates symboliques
--> Processus audio dans i-score : 
-- FX => Supports FaUST.
-- Instrument.
-- Send.
-- Return.
-- Mixing.
-- Hiérarchie à profondeur arbitraire.
-- Automations : exporte les paramètres dans le modèle d'objet
 
 Faire graphe pour une Time Constraint et donner un exemple avec effets appliqués sur scénario.
 Expliquer graphe hiérarchique de dépendances : penser au cas ou un a un return dans une hiérarchie puis un send à un niveau supérieur; il faut faire le grpahe de A à Z et s'assurer qu'il ne soit pas cyclique

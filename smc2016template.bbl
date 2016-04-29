@@ -23,9 +23,12 @@
 
 \bibitem{bell2015skeuomorphism}
 A.~Bell, E.~Hein, and J.~Ratcliffe, ``Beyond skeuomorphism: The evolution of
-  music production software user interface metaphors.''
+  music production software user interface metaphors,'' 2015.
 
 \bibitem{letzlibaudiostream}
-S.~Letz \emph{et~al.}, ``The libaudiostream library, 2012.''
+S.~Letz \emph{et~al.}, ``The libaudiostream library,'' 2012.
+
+\bibitem{seebach2001cranky}
+P.~Seebach, ``The cranky user: The principle of least astonishment,'' 2001.
 
 \end{thebibliography}
