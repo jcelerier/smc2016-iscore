@@ -25,6 +25,26 @@
 A.~Bell, E.~Hein, and J.~Ratcliffe, ``Beyond skeuomorphism: The evolution of
   music production software user interface metaphors,'' 2015.
 
+\bibitem{mollenkampparadigms}
+A.~M{\"o}llenkamp, ``Paradigms of music software development.''
+
+\bibitem{berthaut2010drile}
+F.~Berthaut, M.~Desainte-Catherine, and M.~Hachet, ``Drile: an immersive
+  environment for hierarchical live-looping,'' in \emph{New Interface for
+  Musical Expression}, 2010, pp. page--192.
+
+\bibitem{rosselet2013jam}
+U.~Rosselet and A.~Renaud, ``Jam on: a new interface for web-based collective
+  music performance.'' in \emph{NIME}, 2013, pp. 394--399.
+
+\bibitem{place2010jamoma}
+T.~Place, T.~Lossius, and N.~Peters, ``The jamoma audio graph layer.''
+
+\bibitem{bullock2011integra}
+J.~Bullock and H.~Frisk, \emph{The integra framework for rapid modular audio
+  application development}.\hskip 1em plus 0.5em minus 0.4em\relax Ann Arbor,
+  MI: Michigan Publishing, University of Michigan Library, 2011.
+
 \bibitem{letzlibaudiostream}
 S.~Letz \emph{et~al.}, ``The libaudiostream library,'' 2012.
 

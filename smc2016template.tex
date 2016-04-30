@@ -173,12 +173,27 @@ Finally, examples of usage in the graphical interface of i-score will be provide
 
 
 \section{Existing works}
-- Audiographe, etc. : Jamoma Audiograph, Logic
-- Ableton Live, Bitwig
-- Reaper
-- DRILE
-- Trackers (FastTracker, ...)
-- Reprendre article Bell
+Outside of the traditional audio sequencer realm, we can find 
+multiple occurences of graphical environments aiming to provide 
+some level of interactivity.
+
+M{\"o}llenkamp presents in~\cite{mollenkampparadigms} the 
+commons paradigms for creating music on a computer : Score-based with MUSIC and Csound, 
+patch-based with Max/MSP or PureData, programming-based with SuperCollider and many of the other music creation languages, music trackers such as FastTracker which were used to make the music in old video game consoles, and multitrack-like such as Cubase, Pro Tools.
+Ableton Live and Bitwig Studio are given their own category thanks to the ability to compose clips of sound interactively.
+
+Drile~\cite{berthaut2010drile} is a virtual reality music software : loops are manipulated and bound together in a 3D environment. Hierarchy is achieved by representing the loops in a tree structure.
+
+Mobile and web applications are also a way that is more and more used to create music, 
+but their are often embedded in a bigger score or framework and act more as an instrument than other systems.
+An interesting example is JamOn~\cite{rosselet2013jam} which allows multiple persons to author music interactively in collaboration by drawing in a web page.
+
+Finally, modern video game music engines such as FMOD and wWise allow some level of interactivity : when some event occurs in a video game, then a sound will be played; automation is also possible, and these environments generally allow for three-dimensional positioning of sound.
+
+For audio engines, one of the predominant metaphors is the audiograph.
+Prime examples are Jamoma AudioGraph\cite{place2010jamoma} and Integra Framework~\cite{bullock2011integra}.
+Audio processing is thought of as a graph of audio nodes, where the output of a node can go to the input of another node.
+However, it only is relevant to instantaneous audio effects, not to score and music authoring.
 
 \section{Context}
 In this section, we will present the two tools that are used to achieve 
@@ -267,14 +282,14 @@ Two elements are necessary :
 	is able to be pulled like it would be by a real soundcard.
 \end{itemize}
 
-We introduce two matching objects in the LibAudioStream : 
+We introduce two matching objects in the LibAudioStream~: 
 \begin{itemize}
 	\item A Group player. This is a player whose processing function has to be called manually. 
 	Timekeeping supposes that it will be pulled in accordance at the clock rate
 	and samplerate of the soundcard.
 	\item A Group audiostream. This particular audiostream, of infinite length, 
 	allows to introduce a Group player in a series of chained streams.
-	For instance : \lstinline{(mix (fx aPlayer anFx)) (fx anotherPlayer anotherFx)}
+	For instance~:~\\\lstinline[language=LISP]{(mix (fx playerA fxA) (fx playerB fxB))}
 \end{itemize}
 
 The execution time of the hierarchized objects will be relative to the start time of the Group audiostream.
