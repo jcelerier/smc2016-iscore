@@ -1,0 +1,3345 @@
+{
+    "Document": {
+        "BaseScenario": {
+            "Constraint": {
+                "DefaultDuration": 30000,
+                "EndState": 1,
+                "ExecutionSpeed": 1,
+                "FullView": {
+                    "CenterOn": [
+                        1012,
+                        755
+                    ],
+                    "ConstraintId": 0,
+                    "ObjectName": "FullViewConstraintViewModel",
+                    "ShownRack": 1,
+                    "Zoom": 16.007108564095841,
+                    "id": 0
+                },
+                "HeightPercentage": 0,
+                "Looping": false,
+                "MaxDuration": 30000,
+                "MaxInf": false,
+                "Metadata": {
+                    "Color": "Transparent1",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "interactive"
+                },
+                "MinDuration": 30000,
+                "MinNull": false,
+                "ObjectName": "Scenario::ConstraintModel",
+                "PluginsMetadata": [
+                ],
+                "Processes": [
+                    {
+                        "Comments": [
+                        ],
+                        "Constraints": [
+                            {
+                                "DefaultDuration": 5682.5235402540238,
+                                "EndState": 2,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 1,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": 1,
+                                    "Zoom": -1,
+                                    "id": 2
+                                },
+                                "HeightPercentage": 0.092852371409485657,
+                                "Looping": false,
+                                "MaxDuration": 6819.0282483048286,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "intro"
+                                },
+                                "MinDuration": 4546.0188322032191,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                    {
+                                        "Duration": 5682.5235402540238,
+                                        "File": {
+                                            "File": "/tmp/1.wav"
+                                        },
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Process.1"
+                                        },
+                                        "ObjectName": "Audio",
+                                        "PluginsMetadata": [
+                                        ],
+                                        "id": 1,
+                                        "uuid": "e4cd0c16-0b5a-4d75-b8f4-067f52bb4c50"
+                                    }
+                                ],
+                                "Rackes": [
+                                    {
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Rack.1"
+                                        },
+                                        "ObjectName": "Scenario::RackModel",
+                                        "Slots": [
+                                            {
+                                                "EditedProcess": 1,
+                                                "Height": 200,
+                                                "LayerModels": [
+                                                    {
+                                                        "ObjectName": "LayerModel",
+                                                        "SharedProcessId": 1,
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Slot.1"
+                                                },
+                                                "ObjectName": "Scenario::SlotModel",
+                                                "id": 1
+                                            }
+                                        ],
+                                        "SlotsPositions": [
+                                            1
+                                        ],
+                                        "id": 1
+                                    }
+                                ],
+                                "Rigidity": false,
+                                "StartDate": 0,
+                                "StartState": 1,
+                                "id": 1
+                            },
+                            {
+                                "DefaultDuration": 1632.7250735377756,
+                                "EndState": 4,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 2,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": "none",
+                                    "Zoom": -1,
+                                    "id": 3
+                                },
+                                "HeightPercentage": 0.31195724782899137,
+                                "Looping": false,
+                                "MaxDuration": 1632.7250735377756,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "Sanford76farcical33"
+                                },
+                                "MinDuration": 1632.7250735377756,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                ],
+                                "Rackes": [
+                                ],
+                                "Rigidity": true,
+                                "StartDate": 5682.5235402540238,
+                                "StartState": 3,
+                                "id": 2
+                            },
+                            {
+                                "DefaultDuration": 2578.0172421476664,
+                                "EndState": 6,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 3,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": 1,
+                                    "Zoom": -1,
+                                    "id": 4
+                                },
+                                "HeightPercentage": 0.33132932531730142,
+                                "Looping": false,
+                                "MaxDuration": "inf",
+                                "MaxInf": true,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "case1.A"
+                                },
+                                "MinDuration": 3168.056246266734,
+                                "MinNull": true,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                    {
+                                        "Duration": 2578.0172421476664,
+                                        "File": {
+                                            "File": "/tmp/drums.wav"
+                                        },
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Process.1"
+                                        },
+                                        "ObjectName": "Audio",
+                                        "PluginsMetadata": [
+                                        ],
+                                        "id": 1,
+                                        "uuid": "e4cd0c16-0b5a-4d75-b8f4-067f52bb4c50"
+                                    }
+                                ],
+                                "Rackes": [
+                                    {
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Rack.1"
+                                        },
+                                        "ObjectName": "Scenario::RackModel",
+                                        "Slots": [
+                                            {
+                                                "EditedProcess": 1,
+                                                "Height": 113,
+                                                "LayerModels": [
+                                                    {
+                                                        "ObjectName": "LayerModel",
+                                                        "SharedProcessId": 1,
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Slot.1"
+                                                },
+                                                "ObjectName": "Scenario::SlotModel",
+                                                "id": 1
+                                            }
+                                        ],
+                                        "SlotsPositions": [
+                                            1
+                                        ],
+                                        "id": 1
+                                    }
+                                ],
+                                "Rigidity": false,
+                                "StartDate": 7315.2486137917995,
+                                "StartState": 5,
+                                "id": 3
+                            },
+                            {
+                                "DefaultDuration": 6915.0708996894027,
+                                "EndState": 8,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 4,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": 1,
+                                    "Zoom": -1,
+                                    "id": 5
+                                },
+                                "HeightPercentage": 0.44488977955911813,
+                                "Looping": false,
+                                "MaxDuration": 6915.0708996894027,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "case1.B"
+                                },
+                                "MinDuration": 6915.0708996894027,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                    {
+                                        "Duration": 6915.0708996894027,
+                                        "File": {
+                                            "File": "/tmp/2.wav"
+                                        },
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Process.1"
+                                        },
+                                        "ObjectName": "Audio",
+                                        "PluginsMetadata": [
+                                        ],
+                                        "id": 1,
+                                        "uuid": "e4cd0c16-0b5a-4d75-b8f4-067f52bb4c50"
+                                    }
+                                ],
+                                "Rackes": [
+                                    {
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Rack.1"
+                                        },
+                                        "ObjectName": "Scenario::RackModel",
+                                        "Slots": [
+                                            {
+                                                "EditedProcess": 1,
+                                                "Height": 116,
+                                                "LayerModels": [
+                                                    {
+                                                        "ObjectName": "LayerModel",
+                                                        "SharedProcessId": 1,
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Slot.1"
+                                                },
+                                                "ObjectName": "Scenario::SlotModel",
+                                                "id": 1
+                                            }
+                                        ],
+                                        "SlotsPositions": [
+                                            1
+                                        ],
+                                        "id": 1
+                                    }
+                                ],
+                                "Rigidity": true,
+                                "StartDate": 5682.5235402540238,
+                                "StartState": 7,
+                                "id": 4
+                            },
+                            {
+                                "DefaultDuration": 4962.2036548697106,
+                                "EndState": 10,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 5,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": 1,
+                                    "Zoom": -1,
+                                    "id": 6
+                                },
+                                "HeightPercentage": 0.11489645958583834,
+                                "Looping": false,
+                                "MaxDuration": 4962.2036548697106,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "eqcontrol"
+                                },
+                                "MinDuration": 4962.2036548697106,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                    {
+                                        "Address": {
+                                            "Device": "",
+                                            "Path": ""
+                                        },
+                                        "Curve": {
+                                            "ObjectName": "CurveModel",
+                                            "Segments": [
+                                                {
+                                                    "End": [
+                                                        0.40540540540540543,
+                                                        0.48223350253807107
+                                                    ],
+                                                    "Following": 1397058336,
+                                                    "ObjectName": "CurveSegmentModel",
+                                                    "Power": 9.5829949238578678,
+                                                    "Previous": "none",
+                                                    "Start": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "id": -2019663611,
+                                                    "uuid": "1e7cb83f-4e47-4b14-814d-2242a9c75991"
+                                                },
+                                                {
+                                                    "End": [
+                                                        0.70024570024570021,
+                                                        0.13705583756345174
+                                                    ],
+                                                    "Following": 1,
+                                                    "ObjectName": "CurveSegmentModel",
+                                                    "Power": 9.5829949238578678,
+                                                    "Previous": -2019663611,
+                                                    "Start": [
+                                                        0.40540540540540543,
+                                                        0.48223350253807107
+                                                    ],
+                                                    "id": 1397058336,
+                                                    "uuid": "1e7cb83f-4e47-4b14-814d-2242a9c75991"
+                                                },
+                                                {
+                                                    "End": [
+                                                        1,
+                                                        1
+                                                    ],
+                                                    "Following": "none",
+                                                    "ObjectName": "CurveSegmentModel",
+                                                    "Power": 9.5829949238578678,
+                                                    "Previous": 1397058336,
+                                                    "Start": [
+                                                        0.70024570024570021,
+                                                        0.13705583756345174
+                                                    ],
+                                                    "id": 1,
+                                                    "uuid": "1e7cb83f-4e47-4b14-814d-2242a9c75991"
+                                                }
+                                            ],
+                                            "id": 45345
+                                        },
+                                        "Duration": 4962.2036548697106,
+                                        "Max": 0,
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Automation.1"
+                                        },
+                                        "Min": 0,
+                                        "ObjectName": "Automation",
+                                        "PluginsMetadata": [
+                                        ],
+                                        "id": 1,
+                                        "uuid": "d2a67bd8-5d3f-404e-b6e9-e350cf2a833f"
+                                    }
+                                ],
+                                "Rackes": [
+                                    {
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Rack.1"
+                                        },
+                                        "ObjectName": "Scenario::RackModel",
+                                        "Slots": [
+                                            {
+                                                "EditedProcess": 1,
+                                                "Height": 150,
+                                                "LayerModels": [
+                                                    {
+                                                        "ObjectName": "Automation::LayerModel",
+                                                        "SharedProcessId": 1,
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Slot.1"
+                                                },
+                                                "ObjectName": "Scenario::SlotModel",
+                                                "id": 1
+                                            }
+                                        ],
+                                        "SlotsPositions": [
+                                            1
+                                        ],
+                                        "id": 1
+                                    }
+                                ],
+                                "Rigidity": true,
+                                "StartDate": 5682.5235402540238,
+                                "StartState": 9,
+                                "id": 5
+                            },
+                            {
+                                "DefaultDuration": 3873.7202725111929,
+                                "EndState": 12,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 6,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": 1,
+                                    "Zoom": -1,
+                                    "id": 7
+                                },
+                                "HeightPercentage": 0.090848363393453577,
+                                "Looping": false,
+                                "MaxDuration": 3873.7202725111929,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "outro"
+                                },
+                                "MinDuration": 3873.7202725111929,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                    {
+                                        "Comments": [
+                                        ],
+                                        "Constraints": [
+                                            {
+                                                "DefaultDuration": 480.21325692287525,
+                                                "EndState": 2,
+                                                "ExecutionSpeed": 1,
+                                                "FullView": {
+                                                    "CenterOn": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "ConstraintId": 1,
+                                                    "ObjectName": "FullViewConstraintViewModel",
+                                                    "ShownRack": "none",
+                                                    "Zoom": -1,
+                                                    "id": 2
+                                                },
+                                                "HeightPercentage": 0.12182741116751269,
+                                                "Looping": false,
+                                                "MaxDuration": 480.21325692287525,
+                                                "MaxInf": false,
+                                                "Metadata": {
+                                                    "Color": "Transparent1",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "alacrity48backage17"
+                                                },
+                                                "MinDuration": 480.21325692287525,
+                                                "MinNull": false,
+                                                "ObjectName": "Scenario::ConstraintModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Processes": [
+                                                ],
+                                                "Rackes": [
+                                                ],
+                                                "Rigidity": true,
+                                                "StartDate": 0,
+                                                "StartState": 1,
+                                                "id": 1
+                                            },
+                                            {
+                                                "DefaultDuration": 1456.6468793327217,
+                                                "EndState": 4,
+                                                "ExecutionSpeed": 1,
+                                                "FullView": {
+                                                    "CenterOn": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "ConstraintId": 2,
+                                                    "ObjectName": "FullViewConstraintViewModel",
+                                                    "ShownRack": 1,
+                                                    "Zoom": -1,
+                                                    "id": 3
+                                                },
+                                                "HeightPercentage": 0.052478413286468129,
+                                                "Looping": false,
+                                                "MaxDuration": 1456.6468793327217,
+                                                "MaxInf": false,
+                                                "Metadata": {
+                                                    "Color": "Transparent1",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "kick"
+                                                },
+                                                "MinDuration": 1456.6468793327217,
+                                                "MinNull": false,
+                                                "ObjectName": "Scenario::ConstraintModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Processes": [
+                                                    {
+                                                        "Duration": 1456.6468793327217,
+                                                        "File": {
+                                                            "File": "/tmp/bass.wav"
+                                                        },
+                                                        "Metadata": {
+                                                            "Color": "",
+                                                            "Comment": "",
+                                                            "Label": "",
+                                                            "ScriptingName": "Process.1"
+                                                        },
+                                                        "ObjectName": "Audio",
+                                                        "PluginsMetadata": [
+                                                        ],
+                                                        "id": 1,
+                                                        "uuid": "e4cd0c16-0b5a-4d75-b8f4-067f52bb4c50"
+                                                    }
+                                                ],
+                                                "Rackes": [
+                                                    {
+                                                        "Metadata": {
+                                                            "Color": "",
+                                                            "Comment": "",
+                                                            "Label": "",
+                                                            "ScriptingName": "Rack.1"
+                                                        },
+                                                        "ObjectName": "Scenario::RackModel",
+                                                        "Slots": [
+                                                            {
+                                                                "EditedProcess": 1,
+                                                                "Height": 119,
+                                                                "LayerModels": [
+                                                                    {
+                                                                        "ObjectName": "LayerModel",
+                                                                        "SharedProcessId": 1,
+                                                                        "id": 1
+                                                                    }
+                                                                ],
+                                                                "Metadata": {
+                                                                    "Color": "",
+                                                                    "Comment": "",
+                                                                    "Label": "",
+                                                                    "ScriptingName": "Slot.1"
+                                                                },
+                                                                "ObjectName": "Scenario::SlotModel",
+                                                                "id": 1
+                                                            }
+                                                        ],
+                                                        "SlotsPositions": [
+                                                            1
+                                                        ],
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Rigidity": true,
+                                                "StartDate": 480.21325692287525,
+                                                "StartState": 3,
+                                                "id": 2
+                                            },
+                                            {
+                                                "DefaultDuration": 1408.6255536404337,
+                                                "EndState": 5,
+                                                "ExecutionSpeed": 1,
+                                                "FullView": {
+                                                    "CenterOn": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "ConstraintId": 3,
+                                                    "ObjectName": "FullViewConstraintViewModel",
+                                                    "ShownRack": 1,
+                                                    "Zoom": -1,
+                                                    "id": 4
+                                                },
+                                                "HeightPercentage": 0.052478413286468129,
+                                                "Looping": false,
+                                                "MaxDuration": 1408.6255536404337,
+                                                "MaxInf": false,
+                                                "Metadata": {
+                                                    "Color": "Transparent1",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "kick"
+                                                },
+                                                "MinDuration": 1408.6255536404337,
+                                                "MinNull": false,
+                                                "ObjectName": "Scenario::ConstraintModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Processes": [
+                                                    {
+                                                        "Duration": 1408.6255536404337,
+                                                        "File": {
+                                                            "File": "/tmp/bass.wav"
+                                                        },
+                                                        "Metadata": {
+                                                            "Color": "",
+                                                            "Comment": "",
+                                                            "Label": "",
+                                                            "ScriptingName": "Process.1"
+                                                        },
+                                                        "ObjectName": "Audio",
+                                                        "PluginsMetadata": [
+                                                        ],
+                                                        "id": 1,
+                                                        "uuid": "e4cd0c16-0b5a-4d75-b8f4-067f52bb4c50"
+                                                    }
+                                                ],
+                                                "Rackes": [
+                                                    {
+                                                        "Metadata": {
+                                                            "Color": "",
+                                                            "Comment": "",
+                                                            "Label": "",
+                                                            "ScriptingName": "Rack.1"
+                                                        },
+                                                        "ObjectName": "Scenario::RackModel",
+                                                        "Slots": [
+                                                            {
+                                                                "EditedProcess": 1,
+                                                                "Height": 118,
+                                                                "LayerModels": [
+                                                                    {
+                                                                        "ObjectName": "LayerModel",
+                                                                        "SharedProcessId": 1,
+                                                                        "id": 1
+                                                                    }
+                                                                ],
+                                                                "Metadata": {
+                                                                    "Color": "",
+                                                                    "Comment": "",
+                                                                    "Label": "",
+                                                                    "ScriptingName": "Slot.1"
+                                                                },
+                                                                "ObjectName": "Scenario::SlotModel",
+                                                                "id": 1
+                                                            }
+                                                        ],
+                                                        "SlotsPositions": [
+                                                            1
+                                                        ],
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Rigidity": true,
+                                                "StartDate": 1936.8601362555969,
+                                                "StartState": 4,
+                                                "id": 3
+                                            },
+                                            {
+                                                "DefaultDuration": 64.028434256383363,
+                                                "EndState": 7,
+                                                "ExecutionSpeed": 1,
+                                                "FullView": {
+                                                    "CenterOn": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "ConstraintId": 4,
+                                                    "ObjectName": "FullViewConstraintViewModel",
+                                                    "ShownRack": "none",
+                                                    "Zoom": -1,
+                                                    "id": 5
+                                                },
+                                                "HeightPercentage": 0.69767441860465118,
+                                                "Looping": false,
+                                                "MaxDuration": 64.028434256383377,
+                                                "MaxInf": false,
+                                                "Metadata": {
+                                                    "Color": "Transparent1",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "bendsome25Aglaia89"
+                                                },
+                                                "MinDuration": 64.028434256383377,
+                                                "MinNull": false,
+                                                "ObjectName": "Scenario::ConstraintModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Processes": [
+                                                ],
+                                                "Rackes": [
+                                                ],
+                                                "Rigidity": true,
+                                                "StartDate": 0,
+                                                "StartState": 6,
+                                                "id": 4
+                                            },
+                                            {
+                                                "DefaultDuration": 160.07108564095842,
+                                                "EndState": 9,
+                                                "ExecutionSpeed": 1,
+                                                "FullView": {
+                                                    "CenterOn": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "ConstraintId": 5,
+                                                    "ObjectName": "FullViewConstraintViewModel",
+                                                    "ShownRack": "none",
+                                                    "Zoom": -1,
+                                                    "id": 6
+                                                },
+                                                "HeightPercentage": 0.69767441860465118,
+                                                "Looping": false,
+                                                "MaxDuration": 160.07108564095842,
+                                                "MaxInf": false,
+                                                "Metadata": {
+                                                    "Color": "Transparent1",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "cagelike51encash26"
+                                                },
+                                                "MinDuration": 160.07108564095842,
+                                                "MinNull": false,
+                                                "ObjectName": "Scenario::ConstraintModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Processes": [
+                                                ],
+                                                "Rackes": [
+                                                ],
+                                                "Rigidity": true,
+                                                "StartDate": 0,
+                                                "StartState": 8,
+                                                "id": 5
+                                            },
+                                            {
+                                                "DefaultDuration": 3361.4927984601268,
+                                                "EndState": 11,
+                                                "ExecutionSpeed": 1,
+                                                "FullView": {
+                                                    "CenterOn": [
+                                                        0,
+                                                        0
+                                                    ],
+                                                    "ConstraintId": 6,
+                                                    "ObjectName": "FullViewConstraintViewModel",
+                                                    "ShownRack": 1,
+                                                    "Zoom": -1,
+                                                    "id": 7
+                                                },
+                                                "HeightPercentage": 0.55901926368817523,
+                                                "Looping": false,
+                                                "MaxDuration": 3361.4927984601268,
+                                                "MaxInf": false,
+                                                "Metadata": {
+                                                    "Color": "Transparent1",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "mapping"
+                                                },
+                                                "MinDuration": 3361.4927984601268,
+                                                "MinNull": false,
+                                                "ObjectName": "Scenario::ConstraintModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Processes": [
+                                                    {
+                                                        "Curve": {
+                                                            "ObjectName": "CurveModel",
+                                                            "Segments": [
+                                                                {
+                                                                    "End": [
+                                                                        1,
+                                                                        1
+                                                                    ],
+                                                                    "Following": "none",
+                                                                    "ObjectName": "CurveSegmentModel",
+                                                                    "Power": 8.0601522842639604,
+                                                                    "Previous": "none",
+                                                                    "Start": [
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "id": 1,
+                                                                    "uuid": "1e7cb83f-4e47-4b14-814d-2242a9c75991"
+                                                                }
+                                                            ],
+                                                            "id": 45345
+                                                        },
+                                                        "Duration": 3361.4927984601268,
+                                                        "Metadata": {
+                                                            "Color": "",
+                                                            "Comment": "",
+                                                            "Label": "",
+                                                            "ScriptingName": "Mapping.1"
+                                                        },
+                                                        "ObjectName": "Mapping",
+                                                        "PluginsMetadata": [
+                                                        ],
+                                                        "SourceAddress": {
+                                                            "Device": "",
+                                                            "Path": ""
+                                                        },
+                                                        "SourceMax": 0,
+                                                        "SourceMin": 0,
+                                                        "TargetAddress": {
+                                                            "Device": "",
+                                                            "Path": ""
+                                                        },
+                                                        "TargetMax": 0,
+                                                        "TargetMin": 0,
+                                                        "id": 1,
+                                                        "uuid": "12a5d9b8-823e-4303-99f8-34db37c448b4"
+                                                    }
+                                                ],
+                                                "Rackes": [
+                                                    {
+                                                        "Metadata": {
+                                                            "Color": "",
+                                                            "Comment": "",
+                                                            "Label": "",
+                                                            "ScriptingName": "Rack.1"
+                                                        },
+                                                        "ObjectName": "Scenario::RackModel",
+                                                        "Slots": [
+                                                            {
+                                                                "EditedProcess": 1,
+                                                                "Height": 88,
+                                                                "LayerModels": [
+                                                                    {
+                                                                        "ObjectName": "Mapping::LayerModel",
+                                                                        "SharedProcessId": 1,
+                                                                        "id": 1
+                                                                    }
+                                                                ],
+                                                                "Metadata": {
+                                                                    "Color": "",
+                                                                    "Comment": "",
+                                                                    "Label": "",
+                                                                    "ScriptingName": "Slot.1"
+                                                                },
+                                                                "ObjectName": "Scenario::SlotModel",
+                                                                "id": 1
+                                                            }
+                                                        ],
+                                                        "SlotsPositions": [
+                                                            1
+                                                        ],
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Rigidity": true,
+                                                "StartDate": 160.07108564095842,
+                                                "StartState": 10,
+                                                "id": 6
+                                            }
+                                        ],
+                                        "Duration": 3873.7202725111929,
+                                        "EndEventId": 1,
+                                        "EndTimeNodeId": 1,
+                                        "Events": [
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 0,
+                                                "Extent": [
+                                                    0.02,
+                                                    0.69767441860465118
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Event.0"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    0,
+                                                    1,
+                                                    6,
+                                                    8
+                                                ],
+                                                "TimeNode": 0,
+                                                "id": 0
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 3873.7202725111929,
+                                                "Extent": [
+                                                    0,
+                                                    0
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Event.1"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                ],
+                                                "TimeNode": 1,
+                                                "id": 1
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 480.21325692287525,
+                                                "Extent": [
+                                                    0.052478413286468129,
+                                                    0.12182741116751269
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "voluptas39outhire24"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    2,
+                                                    3
+                                                ],
+                                                "TimeNode": 2,
+                                                "id": 2
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 1936.8601362555969,
+                                                "Extent": [
+                                                    0.052478413286468129,
+                                                    0.052478413286468129
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "slommock87undeft54"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    4
+                                                ],
+                                                "TimeNode": 3,
+                                                "id": 3
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 3345.4856898960306,
+                                                "Extent": [
+                                                    0.052478413286468129,
+                                                    0.052478413286468129
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "punicial97anagep73"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    5
+                                                ],
+                                                "TimeNode": 4,
+                                                "id": 4
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 64.028434256383363,
+                                                "Extent": [
+                                                    0.69767441860465118,
+                                                    0.69767441860465118
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "adnoun96conusant54"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    7
+                                                ],
+                                                "TimeNode": 5,
+                                                "id": 5
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 160.07108564095842,
+                                                "Extent": [
+                                                    0.55901926368817523,
+                                                    0.69767441860465118
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "rickshaw46costard97"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    9,
+                                                    10
+                                                ],
+                                                "TimeNode": 6,
+                                                "id": 6
+                                            },
+                                            {
+                                                "Condition": {
+                                                    "Children": [
+                                                    ],
+                                                    "RootNode": {
+                                                    }
+                                                },
+                                                "Date": 3521.563884101085,
+                                                "Extent": [
+                                                    0.55901926368817523,
+                                                    0.55901926368817523
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "Emphasis4",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "palative36Taposa74"
+                                                },
+                                                "ObjectName": "Scenario::EventModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "States": [
+                                                    11
+                                                ],
+                                                "TimeNode": 7,
+                                                "id": 7
+                                            }
+                                        ],
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Scenario.1"
+                                        },
+                                        "ObjectName": "Scenario",
+                                        "PluginsMetadata": [
+                                        ],
+                                        "StartEventId": 0,
+                                        "StartStateId": 0,
+                                        "StartTimeNodeId": 0,
+                                        "States": [
+                                            {
+                                                "Event": 0,
+                                                "HeightPercentage": 0.02,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.0"
+                                                },
+                                                "NextConstraint": "none",
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": "none",
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 0
+                                            },
+                                            {
+                                                "Event": 0,
+                                                "HeightPercentage": 0.12182741116751269,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.1"
+                                                },
+                                                "NextConstraint": 1,
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": "none",
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 1
+                                            },
+                                            {
+                                                "Event": 2,
+                                                "HeightPercentage": 0.12182741116751269,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.2"
+                                                },
+                                                "NextConstraint": "none",
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": 1,
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 2
+                                            },
+                                            {
+                                                "Event": 2,
+                                                "HeightPercentage": 0.052478413286468129,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.3"
+                                                },
+                                                "NextConstraint": 2,
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": "none",
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 3
+                                            },
+                                            {
+                                                "Event": 3,
+                                                "HeightPercentage": 0.052478413286468129,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.4"
+                                                },
+                                                "NextConstraint": 3,
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": 2,
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 4
+                                            },
+                                            {
+                                                "Event": 4,
+                                                "HeightPercentage": 0.052478413286468129,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.5"
+                                                },
+                                                "NextConstraint": "none",
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": 3,
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 5
+                                            },
+                                            {
+                                                "Event": 0,
+                                                "HeightPercentage": 0.69767441860465118,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.6"
+                                                },
+                                                "NextConstraint": 4,
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": "none",
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 6
+                                            },
+                                            {
+                                                "Event": 5,
+                                                "HeightPercentage": 0.69767441860465118,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.7"
+                                                },
+                                                "NextConstraint": "none",
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": 4,
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 7
+                                            },
+                                            {
+                                                "Event": 0,
+                                                "HeightPercentage": 0.69767441860465118,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.8"
+                                                },
+                                                "NextConstraint": 5,
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": "none",
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 8
+                                            },
+                                            {
+                                                "Event": 6,
+                                                "HeightPercentage": 0.69767441860465118,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.9"
+                                                },
+                                                "NextConstraint": "none",
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": 5,
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 9
+                                            },
+                                            {
+                                                "Event": 6,
+                                                "HeightPercentage": 0.55901926368817523,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.10"
+                                                },
+                                                "NextConstraint": 6,
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": "none",
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 10
+                                            },
+                                            {
+                                                "Event": 7,
+                                                "HeightPercentage": 0.55901926368817523,
+                                                "Messages": {
+                                                    "Children": [
+                                                    ],
+                                                    "Following": [
+                                                    ],
+                                                    "Name": "",
+                                                    "Previous": [
+                                                    ],
+                                                    "Priorities": [
+                                                        1,
+                                                        2,
+                                                        0
+                                                    ]
+                                                },
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "State.11"
+                                                },
+                                                "NextConstraint": "none",
+                                                "ObjectName": "Scenario::StateModel",
+                                                "PreviousConstraint": 6,
+                                                "StateProcesses": [
+                                                ],
+                                                "id": 11
+                                            }
+                                        ],
+                                        "TimeNodes": [
+                                            {
+                                                "Date": 0,
+                                                "Events": [
+                                                    0
+                                                ],
+                                                "Extent": [
+                                                    0.02,
+                                                    0.69767441860465118
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "TimeNode.0"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 0
+                                            },
+                                            {
+                                                "Date": 3873.7202725111929,
+                                                "Events": [
+                                                    1
+                                                ],
+                                                "Extent": [
+                                                    0,
+                                                    0.10000000000000001
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "TimeNode.1"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 1
+                                            },
+                                            {
+                                                "Date": 480.21325692287525,
+                                                "Events": [
+                                                    2
+                                                ],
+                                                "Extent": [
+                                                    0.052478413286468129,
+                                                    0.12182741116751269
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "logology23toroidal53"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 2
+                                            },
+                                            {
+                                                "Date": 1936.8601362555969,
+                                                "Events": [
+                                                    3
+                                                ],
+                                                "Extent": [
+                                                    0.052478413286468129,
+                                                    0.052478413286468129
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "overwing19invoke82"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 3
+                                            },
+                                            {
+                                                "Date": 3345.4856898960306,
+                                                "Events": [
+                                                    4
+                                                ],
+                                                "Extent": [
+                                                    0.052478413286468129,
+                                                    0.052478413286468129
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "leaker47trichy60"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 4
+                                            },
+                                            {
+                                                "Date": 64.028434256383363,
+                                                "Events": [
+                                                    5
+                                                ],
+                                                "Extent": [
+                                                    0.69767441860465118,
+                                                    0.69767441860465118
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "besomer2chitty1"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 5
+                                            },
+                                            {
+                                                "Date": 160.07108564095842,
+                                                "Events": [
+                                                    6
+                                                ],
+                                                "Extent": [
+                                                    0.55901926368817523,
+                                                    0.69767441860465118
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "isothere65elytral29"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 6
+                                            },
+                                            {
+                                                "Date": 3521.563884101085,
+                                                "Events": [
+                                                    7
+                                                ],
+                                                "Extent": [
+                                                    0.55901926368817523,
+                                                    0.55901926368817523
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "HalfDark",
+                                                    "Comment": "",
+                                                    "Label": "TimeNode",
+                                                    "ScriptingName": "conceder37cagelike42"
+                                                },
+                                                "ObjectName": "Scenario::TimeNodeModel",
+                                                "PluginsMetadata": [
+                                                ],
+                                                "Trigger": {
+                                                    "Active": false,
+                                                    "Expression": {
+                                                        "Children": [
+                                                        ],
+                                                        "RootNode": {
+                                                        }
+                                                    }
+                                                },
+                                                "id": 7
+                                            }
+                                        ],
+                                        "id": 1,
+                                        "uuid": "de035912-5b03-49a8-bc4d-b2cba68e21d9"
+                                    }
+                                ],
+                                "Rackes": [
+                                    {
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Rack.1"
+                                        },
+                                        "ObjectName": "Scenario::RackModel",
+                                        "Slots": [
+                                            {
+                                                "EditedProcess": 1,
+                                                "Height": 325,
+                                                "LayerModels": [
+                                                    {
+                                                        "Constraints": [
+                                                            {
+                                                                "ConstraintId": 1,
+                                                                "ObjectName": "TemporalConstraintViewModel",
+                                                                "ShownRack": "none",
+                                                                "id": 1
+                                                            },
+                                                            {
+                                                                "ConstraintId": 2,
+                                                                "ObjectName": "TemporalConstraintViewModel",
+                                                                "ShownRack": 1,
+                                                                "id": 2
+                                                            },
+                                                            {
+                                                                "ConstraintId": 3,
+                                                                "ObjectName": "TemporalConstraintViewModel",
+                                                                "ShownRack": 1,
+                                                                "id": 3
+                                                            },
+                                                            {
+                                                                "ConstraintId": 4,
+                                                                "ObjectName": "TemporalConstraintViewModel",
+                                                                "ShownRack": "none",
+                                                                "id": 4
+                                                            },
+                                                            {
+                                                                "ConstraintId": 5,
+                                                                "ObjectName": "TemporalConstraintViewModel",
+                                                                "ShownRack": "none",
+                                                                "id": 5
+                                                            },
+                                                            {
+                                                                "ConstraintId": 6,
+                                                                "ObjectName": "TemporalConstraintViewModel",
+                                                                "ShownRack": 1,
+                                                                "id": 6
+                                                            }
+                                                        ],
+                                                        "ObjectName": "TemporalScenarioLayer",
+                                                        "SharedProcessId": 1,
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Slot.1"
+                                                },
+                                                "ObjectName": "Scenario::SlotModel",
+                                                "id": 1
+                                            }
+                                        ],
+                                        "SlotsPositions": [
+                                            1
+                                        ],
+                                        "id": 1
+                                    }
+                                ],
+                                "Rigidity": true,
+                                "StartDate": 10644.727195123734,
+                                "StartState": 11,
+                                "id": 6
+                            },
+                            {
+                                "DefaultDuration": 7699.4192193300987,
+                                "EndState": 14,
+                                "ExecutionSpeed": 1,
+                                "FullView": {
+                                    "CenterOn": [
+                                        0,
+                                        0
+                                    ],
+                                    "ConstraintId": 7,
+                                    "ObjectName": "FullViewConstraintViewModel",
+                                    "ShownRack": 1,
+                                    "Zoom": -1,
+                                    "id": 8
+                                },
+                                "HeightPercentage": 0.57047428189712757,
+                                "Looping": false,
+                                "MaxDuration": 7699.4192193300987,
+                                "MaxInf": false,
+                                "Metadata": {
+                                    "Color": "Transparent1",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "case2"
+                                },
+                                "MinDuration": 7699.4192193300987,
+                                "MinNull": false,
+                                "ObjectName": "Scenario::ConstraintModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Processes": [
+                                    {
+                                        "Duration": 7699.4192193300987,
+                                        "File": {
+                                            "File": "/tmp/1.wav"
+                                        },
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Process.1"
+                                        },
+                                        "ObjectName": "Audio",
+                                        "PluginsMetadata": [
+                                        ],
+                                        "id": 1,
+                                        "uuid": "e4cd0c16-0b5a-4d75-b8f4-067f52bb4c50"
+                                    }
+                                ],
+                                "Rackes": [
+                                    {
+                                        "Metadata": {
+                                            "Color": "",
+                                            "Comment": "",
+                                            "Label": "",
+                                            "ScriptingName": "Rack.1"
+                                        },
+                                        "ObjectName": "Scenario::RackModel",
+                                        "Slots": [
+                                            {
+                                                "EditedProcess": 1,
+                                                "Height": 200,
+                                                "LayerModels": [
+                                                    {
+                                                        "ObjectName": "LayerModel",
+                                                        "SharedProcessId": 1,
+                                                        "id": 1
+                                                    }
+                                                ],
+                                                "Metadata": {
+                                                    "Color": "",
+                                                    "Comment": "",
+                                                    "Label": "",
+                                                    "ScriptingName": "Slot.1"
+                                                },
+                                                "ObjectName": "Scenario::SlotModel",
+                                                "id": 1
+                                            }
+                                        ],
+                                        "SlotsPositions": [
+                                            1
+                                        ],
+                                        "id": 1
+                                    }
+                                ],
+                                "Rigidity": true,
+                                "StartDate": 5682.5235402540238,
+                                "StartState": 13,
+                                "id": 7
+                            }
+                        ],
+                        "Duration": 30000,
+                        "EndEventId": 1,
+                        "EndTimeNodeId": 1,
+                        "Events": [
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 0,
+                                "Extent": [
+                                    0.02,
+                                    0.092852371409485657
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "Event.0"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    0,
+                                    1
+                                ],
+                                "TimeNode": 0,
+                                "id": 0
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 30000,
+                                "Extent": [
+                                    0,
+                                    0
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "Event.1"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                ],
+                                "TimeNode": 1,
+                                "id": 1
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 5682.5235402540238,
+                                "Extent": [
+                                    0.092852371409485657,
+                                    0.11489645958583834
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "primsie75berewick6"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    2,
+                                    9
+                                ],
+                                "TimeNode": 2,
+                                "id": 2
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 7315.2486137917995,
+                                "Extent": [
+                                    0.31195724782899137,
+                                    0.33132932531730142
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "pedaler6clotter96"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    4,
+                                    5
+                                ],
+                                "TimeNode": 3,
+                                "id": 3
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 9893.2658559394658,
+                                "Extent": [
+                                    0.33132932531730142,
+                                    0.33132932531730142
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "opsigamy66Ramaite70"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    6
+                                ],
+                                "TimeNode": 4,
+                                "id": 4
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                    ],
+                                                    "Relation": {
+                                                        "LHS": {
+                                                            "Address": {
+                                                                "Device": "a",
+                                                                "Path": "b"
+                                                            }
+                                                        },
+                                                        "Op": 3,
+                                                        "RHS": {
+                                                            "Value": {
+                                                                "Type": "Int",
+                                                                "Value": 2
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "RootNode": {
+                                            }
+                                        }
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 5682.5235402540238,
+                                "Extent": [
+                                    0.31195724782899137,
+                                    0.44488977955911813
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "Dasyurus88anoxic52"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    3,
+                                    7
+                                ],
+                                "TimeNode": 2,
+                                "id": 5
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 12597.594439943427,
+                                "Extent": [
+                                    0.44488977955911813,
+                                    0.44488977955911813
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "nonfalse57Spartina92"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    8
+                                ],
+                                "TimeNode": 5,
+                                "id": 6
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 10644.727195123734,
+                                "Extent": [
+                                    0.090848363393453577,
+                                    0.11489645958583834
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "unclimb21manning11"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    10,
+                                    11
+                                ],
+                                "TimeNode": 6,
+                                "id": 7
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 14518.447467634927,
+                                "Extent": [
+                                    0.090848363393453577,
+                                    0.090848363393453577
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "ponderal28Lilian88"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    12
+                                ],
+                                "TimeNode": 7,
+                                "id": 8
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 13381.942759584123,
+                                "Extent": [
+                                    0.57047428189712757,
+                                    0.57047428189712757
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "kittle88barrelet40"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    14
+                                ],
+                                "TimeNode": 8,
+                                "id": 9
+                            },
+                            {
+                                "Condition": {
+                                    "Children": [
+                                        {
+                                            "Children": [
+                                                {
+                                                    "Children": [
+                                                    ],
+                                                    "Relation": {
+                                                        "LHS": {
+                                                            "Address": {
+                                                                "Device": "c",
+                                                                "Path": "d"
+                                                            }
+                                                        },
+                                                        "Op": 3,
+                                                        "RHS": {
+                                                            "Value": {
+                                                                "Type": "Int",
+                                                                "Value": 4
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "RootNode": {
+                                            }
+                                        }
+                                    ],
+                                    "RootNode": {
+                                    }
+                                },
+                                "Date": 5682.5235402540238,
+                                "Extent": [
+                                    0.57047428189712757,
+                                    0.57047428189712757
+                                ],
+                                "Metadata": {
+                                    "Color": "Emphasis4",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "unbright42immortal48"
+                                },
+                                "ObjectName": "Scenario::EventModel",
+                                "PluginsMetadata": [
+                                ],
+                                "States": [
+                                    13
+                                ],
+                                "TimeNode": 2,
+                                "id": 10
+                            }
+                        ],
+                        "Metadata": {
+                            "Color": "",
+                            "Comment": "",
+                            "Label": "",
+                            "ScriptingName": "Scenario.1"
+                        },
+                        "ObjectName": "Scenario",
+                        "PluginsMetadata": [
+                        ],
+                        "StartEventId": 0,
+                        "StartStateId": 0,
+                        "StartTimeNodeId": 0,
+                        "States": [
+                            {
+                                "Event": 0,
+                                "HeightPercentage": 0.02,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.0"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 0
+                            },
+                            {
+                                "Event": 0,
+                                "HeightPercentage": 0.092852371409485657,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.1"
+                                },
+                                "NextConstraint": 1,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 1
+                            },
+                            {
+                                "Event": 2,
+                                "HeightPercentage": 0.092852371409485657,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.2"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 1,
+                                "StateProcesses": [
+                                ],
+                                "id": 2
+                            },
+                            {
+                                "Event": 5,
+                                "HeightPercentage": 0.31195724782899137,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.3"
+                                },
+                                "NextConstraint": 2,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 3
+                            },
+                            {
+                                "Event": 3,
+                                "HeightPercentage": 0.31195724782899137,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.4"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 2,
+                                "StateProcesses": [
+                                ],
+                                "id": 4
+                            },
+                            {
+                                "Event": 3,
+                                "HeightPercentage": 0.33132932531730142,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.5"
+                                },
+                                "NextConstraint": 3,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 5
+                            },
+                            {
+                                "Event": 4,
+                                "HeightPercentage": 0.33132932531730142,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.6"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 3,
+                                "StateProcesses": [
+                                ],
+                                "id": 6
+                            },
+                            {
+                                "Event": 5,
+                                "HeightPercentage": 0.44488977955911813,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.7"
+                                },
+                                "NextConstraint": 4,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 7
+                            },
+                            {
+                                "Event": 6,
+                                "HeightPercentage": 0.44488977955911813,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.8"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 4,
+                                "StateProcesses": [
+                                ],
+                                "id": 8
+                            },
+                            {
+                                "Event": 2,
+                                "HeightPercentage": 0.11489645958583834,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.9"
+                                },
+                                "NextConstraint": 5,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 9
+                            },
+                            {
+                                "Event": 7,
+                                "HeightPercentage": 0.11489645958583834,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.10"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 5,
+                                "StateProcesses": [
+                                ],
+                                "id": 10
+                            },
+                            {
+                                "Event": 7,
+                                "HeightPercentage": 0.090848363393453577,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.11"
+                                },
+                                "NextConstraint": 6,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 11
+                            },
+                            {
+                                "Event": 8,
+                                "HeightPercentage": 0.090848363393453577,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.12"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 6,
+                                "StateProcesses": [
+                                ],
+                                "id": 12
+                            },
+                            {
+                                "Event": 10,
+                                "HeightPercentage": 0.57047428189712757,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.13"
+                                },
+                                "NextConstraint": 7,
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": "none",
+                                "StateProcesses": [
+                                ],
+                                "id": 13
+                            },
+                            {
+                                "Event": 9,
+                                "HeightPercentage": 0.57047428189712757,
+                                "Messages": {
+                                    "Children": [
+                                    ],
+                                    "Following": [
+                                    ],
+                                    "Name": "",
+                                    "Previous": [
+                                    ],
+                                    "Priorities": [
+                                        1,
+                                        2,
+                                        0
+                                    ]
+                                },
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "State.14"
+                                },
+                                "NextConstraint": "none",
+                                "ObjectName": "Scenario::StateModel",
+                                "PreviousConstraint": 7,
+                                "StateProcesses": [
+                                ],
+                                "id": 14
+                            }
+                        ],
+                        "TimeNodes": [
+                            {
+                                "Date": 0,
+                                "Events": [
+                                    0
+                                ],
+                                "Extent": [
+                                    0.02,
+                                    0.092852371409485657
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "TimeNode.0"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 0
+                            },
+                            {
+                                "Date": 30000,
+                                "Events": [
+                                    1
+                                ],
+                                "Extent": [
+                                    0,
+                                    0.10000000000000001
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "TimeNode.1"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 1
+                            },
+                            {
+                                "Date": 5682.5235402540238,
+                                "Events": [
+                                    2,
+                                    5,
+                                    10
+                                ],
+                                "Extent": [
+                                    0.092852371409485657,
+                                    0.57047428189712757
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "amaltas66cuttage18"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": true,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 2
+                            },
+                            {
+                                "Date": 7315.2486137917995,
+                                "Events": [
+                                    3
+                                ],
+                                "Extent": [
+                                    0.31195724782899137,
+                                    0.33132932531730142
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "polypage13grueling83"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 3
+                            },
+                            {
+                                "Date": 9893.2658559394658,
+                                "Events": [
+                                    4
+                                ],
+                                "Extent": [
+                                    0.33132932531730142,
+                                    0.33132932531730142
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "jecoral94europium45"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": true,
+                                    "Expression": {
+                                        "Children": [
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                        ],
+                                                        "Relation": {
+                                                            "LHS": {
+                                                                "Address": {
+                                                                    "Device": "c",
+                                                                    "Path": "d"
+                                                                }
+                                                            },
+                                                            "Op": 3,
+                                                            "RHS": {
+                                                                "Value": {
+                                                                    "Type": "Int",
+                                                                    "Value": 3
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                ],
+                                                "RootNode": {
+                                                }
+                                            }
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 4
+                            },
+                            {
+                                "Date": 12597.594439943427,
+                                "Events": [
+                                    6
+                                ],
+                                "Extent": [
+                                    0.44488977955911813,
+                                    0.44488977955911813
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "isothere78Nazarene72"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 5
+                            },
+                            {
+                                "Date": 10644.727195123734,
+                                "Events": [
+                                    7
+                                ],
+                                "Extent": [
+                                    0.090848363393453577,
+                                    0.11489645958583834
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "skeeter58farcical89"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 6
+                            },
+                            {
+                                "Date": 14518.447467634927,
+                                "Events": [
+                                    8
+                                ],
+                                "Extent": [
+                                    0.090848363393453577,
+                                    0.090848363393453577
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "kittle47parakeet27"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 7
+                            },
+                            {
+                                "Date": 13381.942759584123,
+                                "Events": [
+                                    9
+                                ],
+                                "Extent": [
+                                    0.57047428189712757,
+                                    0.57047428189712757
+                                ],
+                                "Metadata": {
+                                    "Color": "HalfDark",
+                                    "Comment": "",
+                                    "Label": "TimeNode",
+                                    "ScriptingName": "upvalley1ragshag3"
+                                },
+                                "ObjectName": "Scenario::TimeNodeModel",
+                                "PluginsMetadata": [
+                                ],
+                                "Trigger": {
+                                    "Active": false,
+                                    "Expression": {
+                                        "Children": [
+                                        ],
+                                        "RootNode": {
+                                        }
+                                    }
+                                },
+                                "id": 8
+                            }
+                        ],
+                        "id": 1,
+                        "uuid": "de035912-5b03-49a8-bc4d-b2cba68e21d9"
+                    }
+                ],
+                "Rackes": [
+                    {
+                        "Metadata": {
+                            "Color": "",
+                            "Comment": "",
+                            "Label": "",
+                            "ScriptingName": "Rack.1"
+                        },
+                        "ObjectName": "Scenario::RackModel",
+                        "Slots": [
+                            {
+                                "EditedProcess": 1,
+                                "Height": 1500,
+                                "LayerModels": [
+                                    {
+                                        "Constraints": [
+                                            {
+                                                "ConstraintId": 1,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": 1,
+                                                "id": 1
+                                            },
+                                            {
+                                                "ConstraintId": 2,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": "none",
+                                                "id": 2
+                                            },
+                                            {
+                                                "ConstraintId": 3,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": 1,
+                                                "id": 3
+                                            },
+                                            {
+                                                "ConstraintId": 4,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": 1,
+                                                "id": 4
+                                            },
+                                            {
+                                                "ConstraintId": 5,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": 1,
+                                                "id": 5
+                                            },
+                                            {
+                                                "ConstraintId": 6,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": 1,
+                                                "id": 6
+                                            },
+                                            {
+                                                "ConstraintId": 7,
+                                                "ObjectName": "TemporalConstraintViewModel",
+                                                "ShownRack": 1,
+                                                "id": 7
+                                            }
+                                        ],
+                                        "ObjectName": "TemporalScenarioLayer",
+                                        "SharedProcessId": 1,
+                                        "id": 1
+                                    }
+                                ],
+                                "Metadata": {
+                                    "Color": "",
+                                    "Comment": "",
+                                    "Label": "",
+                                    "ScriptingName": "Slot.1"
+                                },
+                                "ObjectName": "Scenario::SlotModel",
+                                "id": 1
+                            }
+                        ],
+                        "SlotsPositions": [
+                            1
+                        ],
+                        "id": 1
+                    }
+                ],
+                "Rigidity": false,
+                "StartDate": 0,
+                "StartState": 0,
+                "id": 0
+            },
+            "EndEvent": {
+                "Condition": {
+                    "Children": [
+                    ],
+                    "RootNode": {
+                    }
+                },
+                "Date": 30000,
+                "Extent": [
+                    0.40000000000000002,
+                    0.59999999999999998
+                ],
+                "Metadata": {
+                    "Color": "Emphasis4",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "Event.1"
+                },
+                "ObjectName": "Scenario::EventModel",
+                "PluginsMetadata": [
+                ],
+                "States": [
+                    1
+                ],
+                "TimeNode": 1,
+                "id": 1
+            },
+            "EndState": {
+                "Event": 1,
+                "HeightPercentage": 0,
+                "Messages": {
+                    "Children": [
+                    ],
+                    "Following": [
+                    ],
+                    "Name": "",
+                    "Previous": [
+                    ],
+                    "Priorities": [
+                        1,
+                        2,
+                        0
+                    ]
+                },
+                "Metadata": {
+                    "Color": "",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "State.1"
+                },
+                "NextConstraint": "none",
+                "ObjectName": "Scenario::StateModel",
+                "PreviousConstraint": 0,
+                "StateProcesses": [
+                ],
+                "id": 1
+            },
+            "EndTimeNode": {
+                "Date": 30000,
+                "Events": [
+                    1
+                ],
+                "Extent": [
+                    0.20000000000000001,
+                    0.80000000000000004
+                ],
+                "Metadata": {
+                    "Color": "HalfDark",
+                    "Comment": "",
+                    "Label": "TimeNode",
+                    "ScriptingName": "TimeNode.1"
+                },
+                "ObjectName": "Scenario::TimeNodeModel",
+                "PluginsMetadata": [
+                ],
+                "Trigger": {
+                    "Active": true,
+                    "Expression": {
+                        "Children": [
+                        ],
+                        "RootNode": {
+                        }
+                    }
+                },
+                "id": 1
+            },
+            "ObjectName": "Scenario::BaseScenario",
+            "PluginsMetadata": [
+            ],
+            "StartEvent": {
+                "Condition": {
+                    "Children": [
+                    ],
+                    "RootNode": {
+                    }
+                },
+                "Date": 0,
+                "Extent": [
+                    0.10000000000000001,
+                    0.14999999999999999
+                ],
+                "Metadata": {
+                    "Color": "Emphasis4",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "Event.0"
+                },
+                "ObjectName": "Scenario::EventModel",
+                "PluginsMetadata": [
+                ],
+                "States": [
+                    0
+                ],
+                "TimeNode": 0,
+                "id": 0
+            },
+            "StartState": {
+                "Event": 0,
+                "HeightPercentage": 0,
+                "Messages": {
+                    "Children": [
+                    ],
+                    "Following": [
+                    ],
+                    "Name": "",
+                    "Previous": [
+                    ],
+                    "Priorities": [
+                        1,
+                        2,
+                        0
+                    ]
+                },
+                "Metadata": {
+                    "Color": "",
+                    "Comment": "",
+                    "Label": "",
+                    "ScriptingName": "State.0"
+                },
+                "NextConstraint": 0,
+                "ObjectName": "Scenario::StateModel",
+                "PreviousConstraint": "none",
+                "StateProcesses": [
+                ],
+                "id": 0
+            },
+            "StartTimeNode": {
+                "Date": 0,
+                "Events": [
+                    0
+                ],
+                "Extent": [
+                    0.20000000000000001,
+                    0.80000000000000004
+                ],
+                "Metadata": {
+                    "Color": "HalfDark",
+                    "Comment": "",
+                    "Label": "TimeNode",
+                    "ScriptingName": "TimeNode.0"
+                },
+                "ObjectName": "Scenario::TimeNodeModel",
+                "PluginsMetadata": [
+                ],
+                "Trigger": {
+                    "Active": false,
+                    "Expression": {
+                        "Children": [
+                        ],
+                        "RootNode": {
+                        }
+                    }
+                },
+                "id": 0
+            },
+            "id": 0
+        },
+        "DocumentId": 37883784,
+        "ObjectName": "Scenario::ScenarioDocumentModel",
+        "id": 1
+    },
+    "Plugins": {
+        "Explorer::DeviceDocumentPlugin": {
+            "Children": [
+            ],
+            "RootNode": {
+            },
+            "uuid": "6e610e1f-9de2-4c36-90dd-0ef570002a21"
+        }
+    }
+}

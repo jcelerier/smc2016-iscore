@@ -12,6 +12,7 @@
 \usepackage{listings}
 \usepackage{cite}
 \usepackage{textcomp}
+\usepackage{float}
 
 %%%%%%%%%%%%%%%%%%%%%%%% Some useful packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% See related documentation %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,11 +153,12 @@ In-between, one can find tools with limited interaction capabilities but full-fl
 like Ableton Live, or Bitwig Studio.
 The interaction lies in the triggering of loops and the ability to change the speed on the fly but is mostly separate from the "traditional" sequencer.
 
-In this paper, we present a new tree-based approach to interactive audio sequencing.
+In this paper, we present a tree-based approach to interactive audio sequencing.
 By exposing the LibAudioStream audio engine to the interactive control sequencer i-score, 
 we provide an audio sequencing software that allows to author music in a timeline 
 with the possibility to arbitrarily nest sounds and effects, trigger sounds interactively 
 while keeping the logical coherency wanted by the composer, and arrange audio effects in a temporal graph.
+For instance, instead of simply applying a chain of effects to an audio track, it is possible to apply temporal sequences of effects : an effect would be enabled for ten seconds, then, if a condition becomes true, another effect would be applied until the musician chooses to stop it.
 
 We will first present the existing works in advanced audio sequencing and workstations, 
 and give a brief presentation of both i-score and the LibAudioStream.
@@ -186,19 +188,20 @@ Drile~\cite{berthaut2010drile} is a virtual reality music software : loops are m
 
 Mobile and web applications are also a way that is more and more used to create music, 
 but their are often embedded in a bigger score or framework and act more as an instrument than other systems.
-An interesting example is JamOn~\cite{rosselet2013jam} which allows multiple persons to author music interactively in collaboration by drawing in a web page.
+An interesting example of web-based sequencer is JamOn~\cite{rosselet2013jam} which allows multiple persons to author music interactively in collaboration by drawing in a web page.
 
-Finally, modern video game music engines such as FMOD and wWise allow some level of interactivity : when some event occurs in a video game, then a sound will be played; automation is also possible, and these environments generally allow for three-dimensional positioning of sound.
+Finally, modern video game music engines such as FMOD and Audiokinetic wWise allow some level of interactivity~: when some event occurs in a video game, then a sound will be played. 
+Automation of parameters is possible, and these environments are geared towards three-dimensional positioning of sound.
 
 For audio engines, one of the predominant metaphors is the audiograph.
 Prime examples are Jamoma AudioGraph\cite{place2010jamoma} and Integra Framework~\cite{bullock2011integra}.
 Audio processing is thought of as a graph of audio nodes, where the output of a node can go to the input of another node.
-However, it only is relevant to instantaneous audio effects, not to score and music authoring.
+%However, an audio graph isn't able to provide a temporal organization of effects or sound by itself.
 
 \section{Context}
 In this section, we will present the two tools that are used to achieve 
 rich audio sequencing : i-score and the LibAudioStream.
-i-score is an interactive sequencer which allows to position events 
+i-score is an interactive sequencer for parameters, which allows to position events 
 in time, and gives the possibility to introduce interaction points and 
 conditions in the score.
 The detailed execution semantics are given in \cite{celerier2015ossia}.
@@ -207,12 +210,14 @@ The LibAudioStream\cite{letzlibaudiostream} provides the ability to write rich a
 by creating and combining streams. The notion of symbolic date, introduced in an extension of the library,
 allows to start and stop the execution of streams at an arbitrary date.
 
-\subsection{Description i-score}
-i-score is a sequencer for parameters. 
+The goal of this work is to bind the audio capabilities of the LibAudioStream 
+with the i-score execution engine and graphical interface, in order to allow 
+the creation of rich hierarchic and interactive musical pieces.
 
-Its main use is to communicate and orchestrate other software in a timely manner, 
+\subsection{Presentation of i-score}
+The main use of i-score is to communicate and orchestrate other software in a timely manner, 
 through the OSC protocol.
-The software can send automations, OSC messages at a given point in time, and call arbitrary JavaScript functions, in a sequenced environment.
+The software can send automations, cue-like OSC messages at a given point in time, and call arbitrary JavaScript functions, in a sequenced environment.
 It supports arbitrary nesting : a score can be embedded in another recursively.
 This is similar to the notion of group tracks in many other sequencers, but 
 there is no limit of depth. 
@@ -220,7 +225,7 @@ Besides, there is no notion of "track" per se; rather, the composer works with
 temporal intervals which contains arbitrary data that can be provided by plug-ins.
 
 There are multiple possibilities of interactivity in i-score~: trigger points, conditions, 
-mappings.
+mappings, speed control.
 \begin{itemize}
     \item Interactive triggers allow to block and synchronize the score until a specific event happens.
     For instance, when an OSC parameter fulfills a condition, such as \lstinline|/a/b >= 3.14|, then 
@@ -228,13 +233,16 @@ mappings.
     \item Conditions allow to execute or disable part of the score according to a boolean condition.
     It makes if-then-else or switch-case programming construct easy to implement in a temporal way.
     \item Mappings allow to map an input parameter to an output parameter, with a transfer function applied to the input.
+    \item The execution speed of hierarchical elements can be controlled during the execution.
 \end{itemize}
 
 A span of time in i-score might have a fixed or indefinite duration;
 we refer to this span as a Time Constraint since it imposes both a logical and temporal order to the elements before and after it.
-An example of the temporal syntax of i-score is presented in fig.~\ref{fig.iscore-example}.
  
 This span of time may contain data by the form of processes : automations, mappings, but also loops and scenarios; a scenario is the process that allows nesting. 
+
+Time Constraints are linked together with Time Nodes, which allows for synchronization and branching of multiple streams of time.
+An example of the temporal syntax of i-score is presented in fig.~\ref{fig.iscore-example}.
 
 \begin{figure}
 	\centering
@@ -242,17 +250,16 @@ This span of time may contain data by the form of processes : automations, mappi
 	\caption{Part of an i-score scenario, showcasing the temporal syntax used. 
 		A full horizontal line means that the time must not be interrupted, 
 		while a dashed horizontal line means that the time of this Constraint can be interrupted to proceed 
-		to the following parts of the score according to an interactive event.}
+		to the following parts of the score according to an external event.}
 	\label{fig.iscore-example}
 \end{figure}
 
-\subsection{Description LibAudioStream}
+\subsection{Presentation of the LibAudioStream}
 -> donner sémantique des flux.
 -> players
 -> donner example flux stream avec effet faust.
-\section{Audio authoring in i-score}
 
-\section{Presentation of the audio system}
+\section{Proposed audio system}
 In this section, we will explain the audio routing 
 features offered by the software.
 
@@ -272,7 +279,7 @@ with two special Send and Return streams.
 In order to be able to apply hierarchical effects on the streams, 
 we have to introduce a way to use hierarchy in the LibAudioStream.
 
-Two elements are necessary : 
+Our method employs two elements : 
 \begin{itemize}
 	\item A particular audio player that will be able to sequence the starting and stopping 
 	of interactive sounds.
@@ -289,7 +296,7 @@ We introduce two matching objects in the LibAudioStream~:
 	and samplerate of the soundcard.
 	\item A Group audiostream. This particular audiostream, of infinite length, 
 	allows to introduce a Group player in a series of chained streams.
-	For instance~:~\\\lstinline[language=LISP]{(mix (fx playerA fxA) (fx playerB fxB))}
+	For instance, in LISP-like notation~:~\\\lstinline[language=LISP]{(mix (fx playerA fxA) (fx playerB fxB))}
 \end{itemize}
 
 The execution time of the hierarchized objects will be relative to the start time of the Group audiostream.
@@ -299,7 +306,7 @@ The sound of the objects will be mixed together.
 In order to be able to create rich effect graphs, we introduce another couple of objects.
 
 The Send audiostream by itself is a passthrough : it just pulls the stream it owns.
-It posseses the same definition : same length, same number of channels\dots
+It posseses the same definition : same length, same number of channels.
 The Return audiostream, constructed with a Send stream, will make a copy of the data in 
 the send stream and allow it to be used by the processing chain it is part of.
 This means that a sound source can be sent to sound effects in parallel, for instance.
@@ -316,11 +323,12 @@ An important point is that the Send stream must itself be pulled regularly by be
 \begin{figure}
 	\centering
 	\includegraphics[width=0.45\textwidth]{figures/graph2.eps}
-	\caption{Possible mixing with the Send and Return objects. An arrow from A to B means that B pulls the audio data from A.}
+	\caption{An example of audio stream composition with the Send and Return objects. An arrow from A to B means that B pulls the audio data from A.}
 	\label{fig.mixsendreturn}
 \end{figure}
 
 \subsection{Audio processes}
+\label{sec.processes}
 We provide multiple audio processes in i-score, that map 
 to lower-level audio streams.
 
@@ -330,24 +338,24 @@ to lower-level audio streams.
 	Currently only Faust effects are supported.
 	\item Generator process : a sound generator, like a synthesizer. 
 	Currently only Faust instruments are supported.
-	\item Sound file.
+	\item Sound file : reads a sound file from the filesystem.
 	\item Explicit send and return processes.
-	\item Mixing process.
+	\item Mixing process : it exposes a matrix which allows to adjust the percentage of each sound-generating process going to each input process.
 \end{itemize}
 
 An important feature of audio workstations is the support for automation, that is, 
 controlling the value of a parameter over time, generally with piecewise continuous functions.
-In i-score automation is generally achieved by sending OSC messages to a remote software;
-the OSC message tree is modeled as an object tree.
-We introduce the loaded effect plug-in to this object tree, so that automations 
-and mappings are able to control audio effects and audio routing parameters such as volume.
+In i-score, automation is achieved by sending OSC messages to a remote software.
+Hence, the OSC message tree is modeled as an object tree.
+We present the loaded effect plug-ins to this object tree, so that automations 
+and mappings are able to control audio effects and audio routing volume.
 
 An example is given in fig.~\ref{fig.iscoreconstraint}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.25\textwidth]{figures/iscore1.eps}
 	\caption{An example of a Time Constraint loaded with audio processes in i-score. 
-		Selecting a particular process shows a complete widget for editing the parameters.}
+		Selecting a particular process shows a complete widget for editing the relevant parameters. On a single Time Constraint, there can be only a single Mixing process, but there is no limit to the amount of other processes.}
 	\label{fig.iscoreconstraint}
 \end{figure}
 \subsection{Stream graph}
@@ -365,16 +373,18 @@ To prevent this, we create a graph where :
 The graph, implemented with the Boost Graph Library~\cite{siek2001boost} can then be used to 
 guarantee the acyclicity, and return an user error if that is not the case.
 
-We provide here the algorithm to build the graph.
+We provide here the method to build the graph :
 
-\todo{Disambiguate the user-created sends and the sends required for the model}
+% \todo{Disambiguate the user-created sends and the sends required for the model}
 %\paragraph{Vertice creation}
-Vertices are created recursively from the Time Constraints in i-score.
+Vertices are created recursively from the Time Constraints in i-score : an i-score document is entirely contained in a top-level Time Constraint.
 First, we iterate through all the processes of the given constraint.
 If the process is hierarchical (Scenario, Loop), then we call the algorithm recursively on the process.
 In the case of the Scenario, it means that we call recursively on all its Constraints; in the case of the Loop, we call recursively on its loop pattern Constraint.
 In both case, we create a Group vertice to model the process.
+If the process is a send or a return, we create a corresponding vertice.
 Then, we create inner Sends for all the streams and a vertice for the Constraint itself.
+Once all the vertices are created, the edges are added as mentioned before.
 
 \begin{figure}
 	\centering
@@ -389,20 +399,26 @@ Then, we create inner Sends for all the streams and a vertice for the Constraint
 
 As can be seen, there can be an ordering between nodes of the graph : the parentmost vertice
 has to be pulled before the others to reflect the causality.
-\todo{Comparer à Ableton ou il est possible pour chaque piste de choisir son entrée et sa sortie.}
+%\todo{Comparer à Ableton ou il est possible pour chaque piste de choisir son entrée et sa sortie.}
 
 Inside a Time Constraint, causality also has to be enforced. 
-Since a mixing bus is provided, we have to ensure that an effect bus cannot be routed in 
+Since a mixing matrix is provided, we have to ensure that an effect bus cannot be routed in 
 itself in a loop. 
 To prevent this at the user interface level, the vertical order of effect chains is used : 
 if Effect Chain 1 comes before Effect Chain 2, then Effect Chain 1 can be routed into Effect Chain 2, but not the contrary.
 
-\todo{placement de la chaine de gain, time stretch, etc.}
+%\todo{placement de la chaine de gain, time stretch, etc.}
 \subsection{Stream creation}
+The stream creation is achieved by first walking the graph
+created earlier from its root in a breadth-first way, and create all the required Sends : the Return audiostreams need to be created with knowledge of the corresponding Send audiostream.
+Then, the hierarchical tree of i-score is traversed and the other streams are created.
+
+We detail in this section the stream creation for particular elements.
 \subsubsection{Scenario}
 An i-score scenario is an arrangement of temporal structures, as shown in fig.~\ref{fig.iscore-example}.
 Since the duration of these structures can change at run-time, it is not meaningful to use the tools provided by the LibAudioStream : sequence stream, parallel stream, mix stream.
 
+The creation of the Scenario stream is done as follows : 
 \begin{enumerate}
 	\item A Group player is created.
 	\item For each Time Node in the scenario, a symbolic date is generated.
@@ -413,40 +429,83 @@ The Audio stream of this process is the group player.
 
 \subsubsection{Loop}
 Due to their interactive nature, loops in i-score can be entirely different from 
-one iteration to another; they are more similar to traditional programming language \texttt{do-while} constructs, than audio sequencer loops.
+one iteration to another. 
+They are more similar to traditional programming language \texttt{do-while} constructs, than audio sequencer loops.
+This prevents us from using the LibAudioStream's loop stream, since 
+it expects a looping sound whose duration will not change from an iteration to another.
+Instead, we wrap the loop pattern Time Constraint's audiostream in a Group player, reset the stream and start it again upon looping.
 
-- problème des boucles dans i-score : chaque itération peut être différente.
 \subsubsection{Time Constraint}
-\todo{audio-graphe pour contrainte avec duplication des effets}
+As explained earlier, a Time Constraint is a process container.
+Such processes can be the sound processes presented in section~\ref{sec.processes}, and 
+the control processes such as automation, etc.
 
--> donner sémantique de flux des Stream Group, Send, Return.
+The creation of the Constraint audio stream is done as follows : 
+\begin{enumerate}
+    \item For each sound-generating process, a stream and a send are created.
+    \item For each effect chain, the effects are instantiated and an effect stream is created with a mix of the returns of the elements to which this effect applies.
+    A send is also created.
+    \item The mixing matrix is used to create mix audio streams from the sends and returns, which are routed either in the user-created sends, or in the stream corresponding to the Time Constraint.
+    A time-stretching audio stream is inserted before the send : it is linked to the execution speed of the time constraint in i-score which can vary interactively.
+\end{enumerate} 
 
-- Comme la durée de chaque contrainte peut varier avec le ralentissement, on utilise principalement 
-des dates symboliques
+%Cas de la boucle avec un coup A, un coup B selon la condition ? 
+%-> exécution d'un timenode doit reset le flux.
 
-Faire graphe pour une Time Constraint et donner un exemple avec effets appliqués sur scénario.
-Expliquer graphe hiérarchique de dépendances : penser au cas ou un a un return dans une hiérarchie puis un send à un niveau supérieur; il faut faire le grpahe de A à Z et s'assurer qu'il ne soit pas cyclique
+%Piste send / return : permet de maintenir les queues de reverb.
 
-1er cas : 
-Un son avec une piste d'effets.
+%\subsection{Routing, multi-channels, etc.}
+%-> mettre maquettes track mix
 
-2eme cas : scénario hiérarchique, boucle
+\section{Examples}
+We present in this part three examples of usage of the presented system.
 
-Cas de la boucle avec un coup A, un coup B selon la condition ? 
--> exécution d'un timenode doit reset le flux.
+\subsection{Recreation of a multi-track sequencer}
+The first example, in fig.\ref{fig.score1}, is a recreation of the multitrack audio sequencer metaphor, with the primitives presented in this paper.
+ 
+This score has three tracks, \textbf{Guitar}, \textbf{Bass}, and \textbf{Drums}, which are implemented with three Time Constraints.
+Each Time Constraint has an audio track and an effect track; the mix track is hidden for clarity.
+The bass track is a looping one-note sound. Automations are applied either at the track level, as for the drums, or at the clip level, as for the guitar \textbf{outro} clip.
+ 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/ex1.png}
+    \caption{Multi-track sequencing.}
+    \label{fig.score1}
+\end{figure}
 
-Piste send / return : permet de maintenir les queues de reverb.
+\subsection{Interactive scenario}
+The second example, in fig.\ref{fig.score2}, gives an overview of the interactive possibilities when creating a song.
+
+The score can behave as follows : 
+For a few seconds, \textbf{intro} will play.  
+Then, if an external event happens, like a footswitch being pressed, 
+multiple things may happen : 
+\begin{itemize}
+    \item In all cases, the \textbf{eqcontrol} part will play, and automate a value of a global effect.
+    \item If a first condition is true (\textbf{case1}), then \textbf{case1.B} will start playing immediately, and \textbf{case1.A} will start playing after a slight delay. If another external event happens, \textbf{case1.A} will stop playing immediately.
+    \item If a second condition is true, at the same time, \textbf{case2} will start playing.
+    \item After \textbf{eqcontrol} finishes, a hierarchical scenario \textbf{outro} is played, which contains two sounds and a parameter mapping.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/ex2.png}
+    \caption{An interactive musical score.}
+    \label{fig.score2}
+\end{figure}
+
+\subsection{Temporal effect graph}
+This last example shows how to arrange not sound, but sound processing temporally.
 
 
-\subsection{Routing, multi-channels, etc.}
--> mettre maquettes track mix
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/ex3.png}
+    \caption{An interactive musical score.}
+    \label{fig.score3}
+\end{figure}
 
-\section{Example}
-\subsection{UI}
--> capture d'écran
-Faire vue scénario et sa traduction en graphe de routage 
-
-\subsection{Temporal effect graphs}
 \section{Conclusion}
 -> lackluster areas : 
 - MIDI support (but OSC)
@@ -455,7 +514,7 @@ but improvements could be the waiting of triggering on some measure of time.
 - "play from anywhere"
 - audio input ?
 - correction de latence ?
-- pour l'instant pas d'optimisations dans des cas simples (e.g. pas besoin de mixage)
+- pour l'instant pas d'optimisations dans des cas simples (e.g. pas besoin de mixage) si on n'a qu'une seule piste
 \begin{acknowledgments}
     ANRT, Blue Yeti, Magali
 \end{acknowledgments} 
