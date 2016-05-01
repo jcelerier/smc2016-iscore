@@ -133,10 +133,10 @@
 \capstarttrue
 %
 \begin{abstract}
-The field of music authoring provides a wealth of creative environments in which music can be created and authored : patchers, programming languages, and multitrack sequencers.
-By combining the i-score interactive sequencer to the LibAudioStream audio engine, a new music software able to represent rich interactive audio sequences is introduced.
+The field of digital music authoring provides a wealth of creative environments in which music can be created and authored : patchers, programming languages, and multitrack sequencers.
+By combining the i-score interactive sequencer to the LibAudioStream audio engine, a new music software able to represent and play rich interactive audio sequences is introduced.
 We present new stream expressions compatible with the LibAudioStream, and 
-use them to create an interactive audio graph, with hierarchical and send - return streams.
+use them to create an interactive audio graph : hierarchical stream and send - return streams.
 This allows to create branching and arbitrarily nested musical scores, in an OSC-centric environment.
 Three examples of interactive musical scores are presented : the recreation of a traditional multi-track sequencer, an interactive musical score, and a temporal effect graph.
 \end{abstract}
@@ -146,7 +146,7 @@ Software audio sequencers are generally considered to be digital versions
 of the traditional tools that are used in a recording studio~: tape recorders, 
 mixing desks, effect racks\dots
 
-Most of the existing software metaphors follow this very closely, with 
+Most of the existing software follow this very closely, with 
 concepts of tracks, buses, linear time, which are a skeuomorphic reinterpretation of the multi-track tape recorder~\cite{bell2015skeuomorphism}.
 At the other side of the music creation spectrum, entirely interaction-oriented tools, 
 like Max/MSP, Pure Data, Csound, or SuperCollider, allow to create musical works in programming-oriented 
@@ -208,7 +208,7 @@ in time, and gives the possibility to introduce interaction points and
 conditions in the score.
 The detailed execution semantics are given in \cite{celerier2015ossia}.
 
-The LibAudioStream\cite{letzlibaudiostream} provides the ability to write rich audio expression
+The LibAudioStream\cite{letzlibaudiostream} provides the ability to author audio expressions
 by creating and combining streams. The notion of symbolic date, introduced in an extension of the library,
 allows to start and stop the execution of streams at an arbitrary date.
 
@@ -226,7 +226,7 @@ there is no limit of depth.
 Besides, there is no notion of "track" per se; rather, the composer works with 
 temporal intervals which contains arbitrary data that can be provided by plug-ins.
 
-There are multiple possibilities of interactivity in i-score~: trigger points, conditions, 
+Multiple possibilities of interactivity are provided in i-score~: trigger points, conditions, 
 mappings, speed control.
 \begin{itemize}
     \item Interactive triggers allow to block and synchronize the score until a specific event happens.
@@ -308,8 +308,8 @@ Our method employs two elements~:
 	of interactive sounds.
 	Such players already exist in the LibAudioStream but are tailored for direct output to
 	the soundcard.
-	\item A way to introduce the Renderer into the stream system, so that it 
-	is able to be pulled like it would be by a real soundcard.
+	\item A way to reintroduce the player into the stream system, so that it 
+	is able to be pulled at regular intervals like it would be by a real soundcard while being mixed or modified by subsequent stream operators.
 \end{itemize}
 
 We introduce two matching objects in the LibAudioStream~: 
@@ -318,27 +318,24 @@ We introduce two matching objects in the LibAudioStream~:
 	Timekeeping supposes that it will be pulled in accordance at the clock rate
 	and samplerate of the soundcard.
 	\item A Group audiostream. This particular audiostream, of infinite length, 
-	allows to introduce a Group player in a series of chained streams.
+	allows to introduce a Group player in a series of chained streams and takes care of having the Player process its buffers
+    regularly.
 \end{itemize}
 
 The execution time of the hierarchized objects will be relative to the start time of the Group audiostream.
-The sound of the objects will be mixed together.
 
 \subsection{Send and return audio streams}
-In order to be able to create rich effect graphs, we introduce another couple of objects.
+In order to be able to create temporal effect graphs, we introduce another couple of objects.
 
-The Send audiostream by itself is a passthrough~: it just pulls the stream it owns.
+The Send audiostream by itself is a passthrough~: it just pulls the stream it is applied to.
 It posseses the same definition~: same length, same number of channels.
 The Return audiostream, constructed with a Send stream, will make a copy of the data in 
 the send stream and allow it to be used by the processing chain it is part of.
-This means that a sound source can be sent to sound effects in parallel, for instance.
+This means that a single sound source can be sent to two effect chains in parallel, for instance.
 
 The Return stream is infinite in length~: to allow for long-lasting audio effects 
 like reverb queues or delays, we suppose that we can pull the data from the Send stream at any point in time.
 If a Return stream tries to fetch the data of a Send stream that has not started yet, or that has already finished, a buffer of silence is provided instead.
-
-As a byproduct of the imposed acyclicity of the graph, some level of parallel processing may be achieved, as long as causality is respected between nodes. 
-For instance, if two Returns with each their own effect chain are connected to a Send, it is possible to compute these returns on different threads after the current buffer of the Send has been processed.
 
 An important point is that the Send stream must itself be pulled regularly by being played as a sound, either directly or by a stream that would encapsulate it.
 
@@ -395,7 +392,9 @@ To prevent this, we create a graph where~:
 \end{itemize} 
 
 The graph, implemented with the Boost Graph Library~\cite{siek2001boost} can then be used to 
-guarantee the acyclicity, and return an user error if that is not the case.
+check for acyclicity, and return an user error if that is not the case.
+As a byproduct of the imposed acyclicity of the graph, some level of parallel processing may be achieved, as long as causality is respected between nodes. 
+For instance, if two Returns with each their own effect chain are connected to a Send, it is possible to compute these returns on different threads after the current buffer of the Send has been processed.
 
 We provide here the method to build the graph~:
 
@@ -427,7 +426,7 @@ Once all the vertices are created, the edges are added as mentioned before.
 	\label{fig.graph}
 \end{figure}
 
-As can be seen, there can be an ordering between nodes of the graph~: the parentmost vertice
+As can be seen, there is an ordering between nodes of the graph~: the parentmost vertice
 has to be pulled before the others to reflect the causality.
 
 %\todo{Comparer à Ableton ou il est possible pour chaque piste de choisir son entrée et sa sortie.}
@@ -496,8 +495,9 @@ We present in this part three examples of usage of the presented system.
 The first example, in fig.\ref{fig.score1}, is a recreation of the multitrack audio sequencer metaphor, with the primitives presented in this paper.
  
 This score has three tracks, \textbf{Guitar}, \textbf{Bass}, and \textbf{Drums}, which are implemented with three Time Constraints.
-Each Time Constraint has an audio track and an effect track; the mix track is hidden for clarity.
-The bass track is a looping one-note sound. Automations are applied either at the track level, as for the drums, or at the clip level, as for the guitar \textbf{outro} clip.
+Each Time Constraint has a Sound process and an Effect process; the Mixing process is hidden for clarity.
+The bass track is a looping one-note sound. Automations are applied either at the "track" level, as for the drums, or at the "clip" level, as for the guitar \textbf{outro} clip. 
+However, in the model there is no actual difference between track and clip, it is solely a particular organization of the score.
  
 \begin{figure}[h]
     \centering
