@@ -7,13 +7,13 @@
                 "ExecutionSpeed": 1,
                 "FullView": {
                     "CenterOn": [
-                        1112,
-                        798.5
+                        446.5,
+                        611
                     ],
                     "ConstraintId": 0,
                     "ObjectName": "FullViewConstraintViewModel",
                     "ShownRack": 1,
-                    "Zoom": 8.1486129137193632,
+                    "Zoom": 19.316005744130205,
                     "id": 0
                 },
                 "HeightPercentage": 0,
@@ -70,7 +70,7 @@
                                     {
                                         "Duration": 5765.8281575483588,
                                         "File": {
-                                            "File": "/tmp/2.wav"
+                                            "File": ""
                                         },
                                         "Metadata": {
                                             "Color": "",
@@ -1962,7 +1962,7 @@
             },
             "id": 0
         },
-        "DocumentId": 1785189228,
+        "DocumentId": 0,
         "ObjectName": "Scenario::ScenarioDocumentModel",
         "id": 1
     },
