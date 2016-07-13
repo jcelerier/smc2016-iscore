@@ -53,22 +53,22 @@
 
 \newcommand*{\LibAudioStream}{\textsc{LibAudioStream}\xspace}
 \newcommand*{\iscore}{\textsc{i-score}\xspace}
-\newcommand*{\maxmsp}{\textsc{Max/MSP}\xspace}
+\newcommand*{\maxmsp}{Cycling 74' \textsc{Max/MSP}\xspace}
 \newcommand*{\puredata}{\textsc{PureData}\xspace}
 \newcommand*{\csound}{\textsc{Csound}\xspace}
 \newcommand*{\supercollider}{\textsc{SuperCollider}\xspace}
-\newcommand*{\abletonlive}{\textsc{Ableton Live}\xspace}
-\newcommand*{\bitwigstudio}{\textsc{Bitwig Studio}\xspace}
+\newcommand*{\abletonlive}{Ableton \textsc{Live}\xspace}
+\newcommand*{\bitwigstudio}{Bitwig \textsc{Studio}\xspace}
 \newcommand*{\fasttracker}{\textsc{FastTracker}\xspace}
-\newcommand*{\cubase}{\textsc{Cubase}\xspace}
-\newcommand*{\protools}{\textsc{Pro Tools}\xspace}
-\newcommand*{\jamomaaudiograph}{\textsc{Jamoma AudioGraph}\xspace}
+\newcommand*{\cubase}{Steinberg \textsc{Cubase}\xspace}
+\newcommand*{\protools}{Avid \textsc{Pro Tools}\xspace}
+\newcommand*{\jamomaaudiograph}{Jamoma \textsc{AudioGraph}\xspace}
 \newcommand*{\integraframework}{\textsc{Integra Framework}\xspace}
-\newcommand*{\openmusic}{\textsc{Integra Framework}\xspace}
+\newcommand*{\openmusic}{\textsc{OpenMusic}\xspace}
 \newcommand*{\MUSIC}{\textsc{MUSIC}\xspace}
 \newcommand*{\drile}{\textsc{Drile}\xspace}
 \newcommand*{\jamon}{\textsc{JamOn}\xspace}
-\newcommand*{\wwise}{\textsc{AudioKinetic Wwise}\xspace}
+\newcommand*{\wwise}{AudioKinetic \textsc{Wwise}\xspace}
 \newcommand*{\fmod}{\textsc{FMOD}\xspace}
 \newcommand*{\faust}{\textsc{Faust}\xspace}
 
@@ -111,7 +111,7 @@ We will first present the existing works in advanced audio sequencing and workst
 and give a brief presentation of both \iscore and the \LibAudioStream.
 Then, the new objects introduced in order to integrate these software together, allowing 
 for rich audio routing capabilities, will be explained.
-Finally, examples of usage in the graphical interface of \iscore will be provided.
+Finally, three examples of usage in the graphical interface of \iscore will be provided : a recreation of a standard multi-track player, an interactive score, and an effect graph applied to a sound.
 
 \section{Existing works}
 Outside of the traditional audio sequencer realm, we can find 
@@ -183,7 +183,7 @@ Time Constraints are linked together with Time Nodes, which allows for synchroni
 
 An example of the temporal syntax of \iscore is presented in fig.~\ref{fig.iscore-example}.
 It is for instance used by Arias and Dubnov in~\cite{Arias:VMO-Score} to construct a musical environment adapted to improvisation by segmenting pre-recorded audio phrases, to allow constrainted improvisation according to high-level musical structures.
-The resulting structures bear similarity with the session concept in \abletonlive: %TODO 
+The resulting generated structures bear similarity with the session concept in \abletonlive: one can loop dynamically over particular sections of a sound file. 
 
 \begin{figure}
 	\centering
@@ -210,7 +210,6 @@ auto sound = MakeMixSound(
     MakeReadSound("b.wav"), 
     0.75);
 \end{lstlisting}
-\newpage
 A stream can then be played through an audio player, with audio sample accuracy:
  
 \begin{lstlisting}[language=C++,columns=fullflexible,basicstyle=\ttfamily]
@@ -495,7 +494,7 @@ However, there are currently some differences with more traditional musical envi
 All the durations are expressed in seconds or milliseconds, instead of beats or any subdivision as they would in other environments. 
 A possible extension to the \iscore execution engine would be to take into account beats for triggering, which would allow to synchronize multiple hierarchical loops to a beat and may be useful for some genres of music, such as electronica or rock.
 
-Likewise, the system only handles audio data, and not MIDI.
+Likewise, the system mostly handles audio and OSC data; MIDI is implemented at a primitive level.
 Another unhandled question is effect delay compensation: sometimes, audio algorithms must introduce multiple frames of latency in their processing chain, for instance because they have to accumulate a certain amount of data.
 This is not taken into account here, hence seemingly synchronized sounds may desynchronize themselves if this latency is not accounted for.
 

@@ -57,6 +57,15 @@ J.-M. Celerier, P.~Baltazar, C.~Bossut, N.~Vuaille, J.-M. Couturier, and
 \bibitem{letzlibaudiostream}
 S.~Letz \emph{et~al.}, ``The libaudiostream library,'' 2012.
 
+\bibitem{Arias:VMO-Score}
+\BIBentryALTinterwordspacing
+J.~Arias, M.~Desainte-Catherine, and S.~Dubnov, ``{Automatic Construction of
+  Interactive Machine Improvisation Scenarios from Audio Recordings},'' in
+  \emph{4th International Workshop on Musical Metacreation (MUME 2016)}, Paris,
+  France, 2016. [Online]. Available:
+  \url{http://musicalmetacreation.org/buddydrive/file/arias_automatic_construction}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bouche2014programmation}
 D.~Bouche, J.~Bresson, and S.~Letz, ``Programmation and control of faust sound
   processing in openmusic,'' in \emph{Joint International Computer Music/Sound
