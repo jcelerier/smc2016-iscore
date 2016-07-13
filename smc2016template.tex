@@ -44,12 +44,10 @@
 \title{\papertitle}
 
 \threeauthors
-{\firstauthor} {LaBRI, Blue Yeti \\ %
-{\tt \href{mailto:jeanmichael@blueyeti.fr}{jeanmichael@blueyeti.fr}}}
-{\secondauthor} {LaBRI \\ %
-{\tt \href{mailto:myriam@labri.fr}{myriam@labri.fr}}}
-{\thirdauthor} { Blue Yeti \\ %
-{\tt \href{mailto:jmc@blueyeti.fr}{jmc@blueyeti.fr}}}
+{\firstauthor} {LaBRI, Blue Yeti \\
+	Univ. Bordeaux, LaBRI, UMR 5800, ~\\ F-33400 Talence, France. \\  Blue Yeti, F-17110 France. \\ jcelerie@labri.fr}
+{\secondauthor} {LaBRI, CNRS \\ Univ. Bordeaux, LaBRI, UMR 5800, ~\\ F-33400 Talence, France. \\ CNRS, LaBRI, UMR 5800, ~\\F-33400 Talence, France. \\  INRIA, F-33400 Talence, France. \\ myriam@labri.fr}
+{\thirdauthor} {Blue Yeti, F-17110 France. \\ jmc@blueyeti.fr}
 
 \newcommand*{\LibAudioStream}{\textsc{LibAudioStream}\xspace}
 \newcommand*{\iscore}{\textsc{i-score}\xspace}
@@ -71,6 +69,7 @@
 \newcommand*{\wwise}{AudioKinetic \textsc{Wwise}\xspace}
 \newcommand*{\fmod}{\textsc{FMOD}\xspace}
 \newcommand*{\faust}{\textsc{Faust}\xspace}
+\newcommand*{\kyma}{\textsc{Kyma}\xspace}
 
 \begin{document}
 \capstartfalse
@@ -100,11 +99,12 @@ In-between, one can find tools with limited interaction capabilities but full-fl
 like \abletonlive, or \bitwigstudio.
 The interaction lies in the triggering of loops and the ability to change the speed on the fly but is mostly separate from the "traditional" sequencer.
 
-In this paper, we present a tree-based approach to interactive audio sequencing.
-By exposing the \LibAudioStream audio engine to the interactive control sequencer \iscore, 
-we provide an audio sequencing software that allows to author music in a timeline 
-with the possibility to arbitrarily nest sounds and effects, trigger sounds interactively 
-while keeping the logical coherency wanted by the composer, and arrange audio effects in a temporal graph.
+In this paper, we present a graphical and hierarchical approach to interactive audio sequencing.
+We integrate the \LibAudioStream audio engine in the interactive control sequencer \iscore.
+This forms an audio sequencing software that allows to author music in a timeline 
+with the possibility to arbitrarily nest sounds and effects and trigger sounds interactively 
+while keeping the logical coherency wanted by the composer. 
+An extension is introduced to arrange audio effects in an interactive temporal graph.
 For instance, instead of simply applying a chain of effects to an audio track, it is possible to apply temporal sequences of effects: an effect would be enabled for ten seconds, then, if a condition becomes true, another effect would be applied until the musician chooses to stop it.
 
 We will first present the existing works in advanced audio sequencing and workstations, 
@@ -124,6 +124,9 @@ patch-based with \maxmsp or \puredata, programming-based with \supercollider and
 \abletonlive and \bitwigstudio are given their own category thanks to the ability to compose clips of sound interactively.
 
 \drile~\cite{berthaut2010drile} is a virtual reality music software: loops are manipulated and bound together in a 3D environment. Hierarchy is achieved by representing the loops in a tree structure.
+
+\kyma~\cite{scaletti1989kyma} is a hybrid software and hardware environment for sound composition. 
+It offers multiple pre-made facilities for sound creation such as multi-dimensional preset interpolation, sound composition by addition and mutation, and sequential \& parallel sound composition on a timeline.
 
 Mobile and web applications are also a way that is more and more used to create music, 
 but their are often embedded in a bigger score or framework and act more as an instrument than other systems.
@@ -291,14 +294,13 @@ An example of such an audiostream graph is presented in fig.~\ref{fig.mixsendret
 \subsection{Audio processes}
 \label{sec.processes}
 We provide multiple audio processes in \iscore, that map 
-to the \LibAudioStream structures.
+to the existing \LibAudioStream structures.
 
 \begin{itemize}
 	\item Effect chain process: register multiple audio effects one after the other. 
 	For instance:~\\ \emph{Equalizer $\,\to\,$ Distortion $\,\to\,$ Reverb}. ~\\
-	Currently only \faust effects are supported.
-	\item Generator process: a sound generator, like a synthesizer. 
-	Currently only \faust instruments are supported.
+	Currently only \faust effects or instruments are supported.
+	\item Input process: allows to introduce the audio input of a sound card in the stream.
 	\item Sound file: reads a sound file from the filesystem.
 	\item Explicit send and return processes for manual routing.
 	\item Mixing process: it exposes a matrix which allows to adjust the percentage of each sound-generating process going to each input process, send, and parent.
@@ -419,6 +421,16 @@ The creation of the Constraint audio stream is done as follows:
     A time-stretching audio stream is inserted before the send: it is linked to the execution speed of the time constraint in \iscore which can vary interactively.
 \end{enumerate} 
 
+\subsubsection{A note on real-time performance}
+Since a real-time audio input is provided, we ought to be able to 
+use the system as a multi-effect, hence with the lowest possible latency.
+The time-stretching effect itself may impose a latency high enough to make 
+playing impossible.
+
+To solve this, when creating the graph, the parents of each Input node are recursively marked 
+with a flag to indicate real-time processing. 
+The Time Constraints with this flag will not be able to be time-stretched, but will only 
+be affected by the latency due to the effects manually introduced by the composer.
 
 %Cas de la boucle avec un coup A, un coup B selon la condition ? 
 %-> exécution d'un timenode doit reset le flux.
@@ -503,8 +515,9 @@ Finally, in many cases optimisations could be achieved to reduce the amount of d
 The next steps for this research includes these points, the handling of real-time audio input, and interactive edition: modifying the score while it is already playing.
 
 \begin{acknowledgments}
-Redacted.%     ANRT, Blue Yeti, Magali
+	This work is supported by an ANRT CIFRE convention with the company Blue Yeti under funding 1181-2014.    
 \end{acknowledgments} 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %bibliography here
