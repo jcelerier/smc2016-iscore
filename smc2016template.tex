@@ -113,14 +113,6 @@ Then, the new objects introduced in order to integrate these software together, 
 for rich audio routing capabilities, will be explained.
 Finally, examples of usage in the graphical interface of \iscore will be provided.
 
-%Progression du papier
-%-> définitions: audio sequencing, workstations, etc.
-%-> poser le problème
-%-> définitions et présentation des outils
-%-> extensions de la \LibAudioStream
-%-> traduction de \iscore en expression \LibAudioStream
-
-
 \section{Existing works}
 Outside of the traditional audio sequencer realm, we can find 
 multiple occurences of graphical environments aiming to provide 
@@ -143,7 +135,6 @@ Automation of parameters is possible, and these environments are geared towards 
 For audio engines, one of the predominant metaphors is the audiograph.
 Prime examples are \jamomaaudiograph~\cite{place2010jamoma} and \integraframework~\cite{bullock2011integra}.
 Audio processing is thought of as a graph of audio nodes, where the output of a node can go to the input of another node.
-%However, an audio graph isn't able to provide a temporal organization of effects or sound by itself.
 
 \section{Context}
 In this section, we will present the two tools that are used to achieve 
@@ -189,7 +180,10 @@ we refer to this span as a Time Constraint since it imposes both a logical and t
 This span of time may contain data by the form of processes: automations, mappings, but also loops and scenarios; a scenario is the process that allows nesting. 
 
 Time Constraints are linked together with Time Nodes, which allows for synchronization and branching of multiple streams of time.
+
 An example of the temporal syntax of \iscore is presented in fig.~\ref{fig.iscore-example}.
+It is for instance used by Arias and Dubnov in~\cite{Arias:VMO-Score} to construct a musical environment adapted to improvisation by segmenting pre-recorded audio phrases, to allow constrainted improvisation according to high-level musical structures.
+The resulting structures bear similarity with the session concept in \abletonlive: %TODO 
 
 \begin{figure}
 	\centering
@@ -242,7 +236,9 @@ together and routed to a single audio bus.
 Then, we present the concept of audio buses integrated to the \LibAudioStream,
 with two special Send and Return streams.
 
-Finally, we exhibit the translation of \iscore structures in \LibAudioStream expressions, which requires the creation of a dependency graph between audio nodes.
+Finally, we exhibit the translation of \iscore structures in \LibAudioStream expressions, 
+which requires the creation of a dependency graph between audio nodes.
+
 \subsection{Group audio stream}
 In order to be able to apply hierarchical effects on the streams, 
 we have to introduce a way to use hierarchy in the \LibAudioStream.
@@ -300,7 +296,7 @@ to the \LibAudioStream structures.
 
 \begin{itemize}
 	\item Effect chain process: register multiple audio effects one after the other. 
-	For instance:~\\ \emph{ Equalizer $\,\to\,$ Distortion $\,\to\,$ Reverb}. ~\\
+	For instance:~\\ \emph{Equalizer $\,\to\,$ Distortion $\,\to\,$ Reverb}. ~\\
 	Currently only \faust effects are supported.
 	\item Generator process: a sound generator, like a synthesizer. 
 	Currently only \faust instruments are supported.
@@ -490,8 +486,7 @@ By using loops, effects, and time constraints with infinite durations, this same
 \end{figure}
 
 \section{Conclusion}
-We presented a computer system for creating interactive music, inspired 
-by but extending the audio sequencer metaphor.
+We presented a computer system for creating interactive music, which extends the audio sequencer metaphor.
 New kind of streams enabling hierarchy and audiograph-like behaviour are introduced to the \LibAudioStream, which is then binded to the \iscore primitives for specifying and scoring time and interaction.
 Three examples present the various musical possibilities that are offered
 through this system.
