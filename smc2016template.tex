@@ -11,7 +11,7 @@
 \usepackage{float}
 
 %user defined variables
-\def\papertitle{Rethinking the audio workstation : tree-based sequencing with i-score and the LibAudioStream}
+\def\papertitle{Rethinking the audio workstation: tree-based sequencing with i-score and the LibAudioStream}
 \def\firstauthor{Jean-Michael Celerier}
 \def\secondauthor{Myriam Desainte-Catherine}
 \def\thirdauthor{Jean-Michel Couturier}
@@ -70,6 +70,7 @@
 \newcommand*{\jamon}{\textsc{JamOn}\xspace}
 \newcommand*{\wwise}{\textsc{AudioKinetic Wwise}\xspace}
 \newcommand*{\fmod}{\textsc{FMOD}\xspace}
+\newcommand*{\faust}{\textsc{Faust}\xspace}
 
 \begin{document}
 \capstartfalse
@@ -77,12 +78,12 @@
 \capstarttrue
 
 \begin{abstract}
-The field of digital music authoring provides a wealth of creative environments in which music can be created and authored : patchers, programming languages, and multitrack sequencers.
+The field of digital music authoring provides a wealth of creative environments in which music can be created and authored: patchers, programming languages, and multitrack sequencers.
 By combining the \iscore interactive sequencer to the \LibAudioStream audio engine, a new music software able to represent and play rich interactive audio sequences is introduced.
 We present new stream expressions compatible with the \LibAudioStream, and 
-use them to create an interactive audio graph : hierarchical stream and send - return streams.
+use them to create an interactive audio graph: hierarchical stream and send - return streams.
 This allows to create branching and arbitrarily nested musical scores, in an OSC-centric environment.
-Three examples of interactive musical scores are presented : the recreation of a traditional multi-track sequencer, an interactive musical score, and a temporal effect graph.
+Three examples of interactive musical scores are presented: the recreation of a traditional multi-track sequencer, an interactive musical score, and a temporal effect graph.
 \end{abstract}
 
 \section{Introduction}
@@ -113,7 +114,7 @@ for rich audio routing capabilities, will be explained.
 Finally, examples of usage in the graphical interface of \iscore will be provided.
 
 %Progression du papier
-%-> définitions : audio sequencing, workstations, etc.
+%-> définitions: audio sequencing, workstations, etc.
 %-> poser le problème
 %-> définitions et présentation des outils
 %-> extensions de la \LibAudioStream
@@ -126,7 +127,7 @@ multiple occurences of graphical environments aiming to provide
 some level of interactivity.
 
 M{\"o}llenkamp presents in~\cite{mollenkampparadigms} the 
-commons paradigms for creating music on a computer: Score-based with \MUSIC and \csound, 
+commons paradigms for creating music on a computer: score-based with \MUSIC and \csound, 
 patch-based with \maxmsp or \puredata, programming-based with \supercollider and many of the other music creation languages, music trackers such as \fasttracker which were used to make the music in old video game consoles, and multitrack-like such as \cubase, \protools.
 \abletonlive and \bitwigstudio are given their own category thanks to the ability to compose clips of sound interactively.
 
@@ -150,9 +151,9 @@ rich audio sequencing: \iscore and the \LibAudioStream.
 \iscore is an interactive sequencer for parameters, which allows to position events 
 in time, and gives the possibility to introduce interaction points and 
 conditions in the score.
-The detailed execution semantics are given in \cite{celerier2015ossia}.
+The detailed execution semantics are given in~\cite{celerier2015ossia}.
 
-The \LibAudioStream\cite{letzlibaudiostream} provides the ability to author audio expressions
+The \LibAudioStream~\cite{letzlibaudiostream} provides the ability to author audio expressions
 by creating and combining streams. The notion of symbolic date, introduced in an extension of the library,
 allows to start and stop the execution of streams at an arbitrary date.
 
@@ -201,10 +202,10 @@ An example of the temporal syntax of \iscore is presented in fig.~\ref{fig.iscor
 \end{figure}
 
 \subsection{Presentation of the LibAudioStream}
-The \LibAudioStream\cite{letzlibaudiostream}, developed at GRAME, is a C++ library allowing to recreate the constructs commonly found in multi-track sequencers directly from code; it also handles communication with the soundcard hardware via the common audio APIs found on desktop operating systems.
+The \LibAudioStream~\cite{letzlibaudiostream}, developed at GRAME, is a C++ library allowing to recreate the constructs commonly found in multi-track sequencers directly from code; it also handles communication with the soundcard hardware via the common audio APIs found on desktop operating systems.
 
 One of the advantages of using a library instead of a graphical interface is that it provides scripting capabilities to the composer and makes algorithmic music composition easier.
-It has been used with success in OpenMusic~\cite{bouche2014programmation}.
+It has been used with success in \openmusic~\cite{bouche2014programmation}.
 
 Audio sounds and transformations are modeled by streams; an algebra with the expected operations is applied to these streams:serial and parallel composition, mixing, and multi-channel operations.
 Streams are bound together in order to construct complex audio expressions.
@@ -223,7 +224,7 @@ StartSound(audioplayer, sound, date);
 \end{lstlisting}
 
 The play date must not necessarily be known in advance thanks to the notion of symbolic date.
-Finally, Faust~\cite{orlarey2009faust} audio effects can be applied to the streams.
+Finally, \faust~\cite{orlarey2009faust} audio effects can be applied to the streams.
 
 \section{Proposed audio system}
 In this section, we will explain the audio routing 
@@ -234,7 +235,7 @@ expression to encapsulate the execution of a virtual audio player,
 in order to allow for hierarchy.
 
 We make the choice to allow for hierarchy by mixing the played streams together.
-This is done in accordance with the principle of least astonishment\cite{seebach2001cranky} for the composer: 
+This is done in accordance with the principle of least astonishment~\cite{seebach2001cranky} for the composer: 
 in most audio software, the notion of grouping implies that the grouped sounds will be mixed 
 together and routed to a single audio bus.
 
@@ -300,9 +301,9 @@ to the \LibAudioStream structures.
 \begin{itemize}
 	\item Effect chain process: register multiple audio effects one after the other. 
 	For instance:~\\ \emph{ Equalizer $\,\to\,$ Distortion $\,\to\,$ Reverb}. ~\\
-	Currently only Faust effects are supported.
+	Currently only \faust effects are supported.
 	\item Generator process: a sound generator, like a synthesizer. 
-	Currently only Faust instruments are supported.
+	Currently only \faust instruments are supported.
 	\item Sound file: reads a sound file from the filesystem.
 	\item Explicit send and return processes for manual routing.
 	\item Mixing process: it exposes a matrix which allows to adjust the percentage of each sound-generating process going to each input process, send, and parent.
@@ -427,7 +428,7 @@ The creation of the Constraint audio stream is done as follows:
 %Cas de la boucle avec un coup A, un coup B selon la condition ? 
 %-> exécution d'un timenode doit reset le flux.
 
-%Piste send / return : permet de maintenir les queues de reverb.
+%Piste send / return: permet de maintenir les queues de reverb.
 
 %\subsection{Routing, multi-channels, etc.}
 %-> mettre maquettes track mix
