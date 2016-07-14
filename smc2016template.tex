@@ -316,7 +316,7 @@ and mappings are able to control audio effects and audio routing volume.
 An example is given in fig.~\ref{fig.iscoreconstraint}.
 \begin{figure}
 	\centering
-	\includegraphics[width=0.25\textwidth]{figures/iscore1.eps}
+	\includegraphics[width=0.35\textwidth]{figures/mix.png}
 	\caption{An example of a Time Constraint loaded with audio processes in \iscore. 
 		Selecting a particular process shows a complete widget for editing the relevant parameters. On a single Time Constraint, there can be only a single Mixing process, but there is no limit to the amount of other processes: there can be multiple sound files, etc.}
 	\label{fig.iscoreconstraint}
@@ -349,7 +349,7 @@ If the process is hierarchical (Scenario, Loop), then we call the algorithm recu
 
 In the case of the Scenario, it means that we call recursively on all its Constraints.
 In the case of the Loop, we call recursively on its loop pattern Constraint.
-In both case, we create a Group vertice to model the process. 
+In both cases, we create a Group vertice to model the process. 
 Edges are to be added from each stream in the hierarchical timeline, to the group stream.
 
 If the process is a send or a return, we create a corresponding vertice.
@@ -376,8 +376,7 @@ has to be pulled before the others to reflect the causality.
 Inside a Time Constraint, causality also has to be enforced. 
 Since a mixing matrix is provided, we have to ensure that an effect bus cannot be routed in 
 itself in a loop. 
-To prevent this at the user interface level, the vertical order of effect chains is used: 
-if Effect Chain 1 comes before Effect Chain 2, then Effect Chain 1 can be routed into Effect Chain 2, but not the contrary; this is also visible on the fig.~\ref{fig.graph}.
+To prevent this at the user interface level, we disable by default the mixing of audio effect chains into each other. In fig.~\ref{fig.graph}, we show the resulting graph for a Time Constraint. 
 
 Hence, the graph is topologically sorted, which allows for the creation of the streams afterwards.
 

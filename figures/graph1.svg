@@ -165,15 +165,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8284271"
-     inkscape:cx="141.17542"
+     inkscape:cx="42.18047"
      inkscape:cy="86.53267"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1916"
-     inkscape:window-height="1164"
-     inkscape:window-x="1920"
-     inkscape:window-y="16"
+     inkscape:window-width="2834"
+     inkscape:window-height="1735"
+     inkscape:window-x="20"
+     inkscape:window-y="20"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -187,7 +187,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -230,7 +230,7 @@
        r="15.783633" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 161.77027,61.628549 34.73534,25.938246"
+       d="m 161.77027,61.628549 34.73534,25.938245"
        id="path4178"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -238,7 +238,7 @@
        inkscape:connection-end="#path4155-4" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4468)"
-       d="m 221.86967,106.35804 38.60851,28.37788"
+       d="m 221.86967,106.35804 38.6085,28.37788"
        id="path4460"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -261,14 +261,6 @@
        inkscape:connection-start="#path4155-4"
        inkscape:connection-end="#rect4136" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#be5714;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4546)"
-       d="M 155.85252,66.462296 215.32917,192.66281"
-       id="path4504"
-       inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0"
-       inkscape:connection-end="#rect4136"
-       inkscape:connection-start="#path4155" />
-    <path
        style="fill:none;fill-rule:evenodd;stroke:#0000be;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4718)"
        d="M 143.4375,66.908648 116.09649,137.70387"
        id="path4506"
@@ -286,7 +278,7 @@
        inkscape:connection-end="#rect4136-3" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#0000be;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4620)"
-       d="M 257.43503,144.92874 147.7505,150.81076"
+       d="M 257.43503,144.92874 147.7505,150.81077"
        id="path4510"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -415,15 +407,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="237.82825"
-       y="118.40354"
+       x="238.18179"
+       y="117.69643"
        id="text5412-3-48-3-8"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
-         x="237.82825"
-         y="118.40354"
+         x="238.18179"
+         y="117.69643"
          id="tspan5464-6-2-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">0%</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">25%</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -436,18 +428,6 @@
          y="67.845398"
          id="tspan5464-6-2-8-7"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">100%</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="188.52811"
-       y="179.92183"
-       id="text5412-3-48-0"
-       sodipodi:linespacing="100%"><tspan
-         sodipodi:role="line"
-         x="188.52811"
-         y="179.92183"
-         id="tspan5464-6-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">0%</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
