@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="99.791901mm"
-   height="57.855556mm"
-   viewBox="0 0 353.59335 205"
+   height="75.103699mm"
+   viewBox="0 0 353.59335 266.11546"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -21,16 +21,17 @@
     <marker
        inkscape:stockid="Arrow2Mend"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow2Mend"
-       style="overflow:visible;"
+       style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path8005"
-         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         transform="scale(0.6) rotate(180) translate(0,0)" />
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)"
+         inkscape:connector-curvature="0" />
     </marker>
   </defs>
   <sodipodi:namedview
@@ -40,20 +41,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="174.84541"
-     inkscape:cy="31.818515"
+     inkscape:zoom="3.959798"
+     inkscape:cx="162.14646"
+     inkscape:cy="109.66048"
      inkscape:document-units="px"
-     inkscape:current-layer="g4144"
+     inkscape:current-layer="g9602"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1916"
-     inkscape:window-height="1164"
-     inkscape:window-x="1920"
-     inkscape:window-y="16"
+     inkscape:window-width="2834"
+     inkscape:window-height="1735"
+     inkscape:window-x="20"
+     inkscape:window-y="20"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -2529,7 +2530,7 @@
       </g>
       <g
          id="g9602"
-         transform="translate(0,133.84522)">
+         transform="translate(164.65486,93.18658)">
         <path
            inkscape:connector-curvature="0"
            id="path8746"
@@ -2538,24 +2539,19 @@
         <text
            sodipodi:linespacing="100%"
            id="text9368"
-           y="221.36548"
-           x="35.034725"
+           y="227.67892"
+           x="34.529648"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
-             id="tspan9588"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
-             y="221.36548"
-             x="35.034725"
-             sodipodi:role="line">Time flow </tspan><tspan
              id="tspan9592"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
-             y="236.36548"
-             x="35.034725"
-             sodipodi:role="line">direction</tspan></text>
+             y="227.67892"
+             x="34.529648"
+             sodipodi:role="line">Time flow direction</tspan></text>
       </g>
       <g
          id="g9608"
-         transform="translate(0,-42.151539)">
+         transform="translate(-1.0101525,42.51187)">
         <g
            transform="translate(-5.050763,-1.4850597)"
            id="g9350">
@@ -2616,10 +2612,10 @@
            sodipodi:role="line"
            id="tspan9407"
            x="50.102112"
-           y="281.46954"></tspan></text>
+           y="281.46954" /></text>
       <g
          id="g9624"
-         transform="translate(0,-50.770624)">
+         transform="translate(0,-119.71353)">
         <g
            style="font-style:normal;font-weight:400;font-size:10px;font-family:Ubuntu;fill:#646464;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.00019145;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter3180)"
            transform="matrix(0.83741986,0,0,0.83741986,13.786037,325.53979)"
@@ -2649,7 +2645,7 @@
       </g>
       <g
          id="g9618"
-         transform="translate(0,-45.716819)">
+         transform="translate(-1.0101525,38.94659)">
         <g
            style="font-style:normal;font-weight:400;font-size:10px;font-family:Arial;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#646464;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
            transform="translate(3.4766338,278.66888)"
@@ -2679,7 +2675,7 @@
       </g>
       <g
          id="g9630"
-         transform="translate(0,-57.374438)">
+         transform="translate(-1.0101525,-94.497544)">
         <g
            style="font-style:normal;font-weight:400;font-size:10px;font-family:Arial;fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel"
            transform="matrix(1,0,0,0.31873433,13.786037,346.75513)"
@@ -2709,10 +2705,10 @@
       </g>
       <g
          id="g9636"
-         transform="translate(0,-61.619305)">
+         transform="translate(-144.95689,-132.45625)">
         <g
            style="font-style:normal;font-weight:400;font-size:10px;font-family:Arial;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:1"
-           transform="matrix(0.24751617,0,0,1,3.1923452,393.0227)"
+           transform="matrix(0.24751617,0,0,1,147.8967,365.49604)"
            font-size="10"
            font-weight="400"
            font-style="normal"
@@ -2727,15 +2723,20 @@
         <text
            sodipodi:linespacing="100%"
            id="text9368-2-0-2"
-           y="396.70676"
-           x="72.62262"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           y="362.36157"
+           x="178.43611"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
-             id="tspan9403-9-8"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
-             y="396.70676"
-             x="72.62262"
-             sodipodi:role="line">Span of time</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+             y="362.36157"
+             x="178.43611"
+             sodipodi:role="line"
+             id="tspan6904">Span of time </tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+             y="377.36157"
+             x="178.43611"
+             sodipodi:role="line"
+             id="tspan6912">(Time Constraint)</tspan></text>
       </g>
     </g>
   </g>
