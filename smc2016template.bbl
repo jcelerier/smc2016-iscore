@@ -22,71 +22,85 @@
 \BIBdecl
 
 \bibitem{bell2015skeuomorphism}
-A.~Bell, E.~Hein, and J.~Ratcliffe, ``Beyond skeuomorphism: The evolution of
-  music production software user interface metaphors,'' 2015.
+A.~Bell, E.~Hein, and J.~Ratcliffe, ``{Beyond Skeuomorphism: The Evolution of
+  Music Production Software User Interface Metaphors},'' \emph{Journal on the
+  Art of Record Production}, 2015.
 
 \bibitem{mollenkampparadigms}
-A.~M{\"o}llenkamp, ``Paradigms of music software development,'' in
+A.~M{\"o}llenkamp, ``{Paradigms of Music Software Development},'' in
   \emph{Proceedings of the 9th Conference on Interdisciplinary Musicology},
   2014.
 
 \bibitem{berthaut2010drile}
-F.~Berthaut, M.~Desainte-Catherine, and M.~Hachet, ``Drile: an immersive
-  environment for hierarchical live-looping,'' in \emph{New Interface for
-  Musical Expression}, 2010, pp. page--192.
+F.~Berthaut, M.~Desainte-Catherine, and M.~Hachet, ``{Drile: an immersive
+  environment for hierarchical live-looping},'' in \emph{New Interfaces for
+  Musical Expression}, 2010, p. 192.
 
 \bibitem{scaletti1989kyma}
 C.~Scaletti, ``The kyma/platypus computer music workstation,'' \emph{Computer
   Music Journal}, vol.~13, no.~2, pp. 23--38, 1989.
 
+\bibitem{bencina2005metasurface}
+R.~Bencina, ``{The metasurface: applying natural neighbour interpolation to
+  two-to-many mapping},'' in \emph{New Interfaces for Musical Expression},
+  2005, pp. 101--104.
+
 \bibitem{rosselet2013jam}
-U.~Rosselet and A.~Renaud, ``Jam on: a new interface for web-based collective
-  music performance.'' in \emph{NIME}, 2013, pp. 394--399.
+U.~Rosselet and A.~Renaud, ``{Jam On: a new interface for web-based collective
+  music performance},'' in \emph{New Interfaces for Musical Expression}, 2013,
+  pp. 394--399.
+
+\bibitem{fencott2013computer}
+R.~Fencott and N.~Bryan-Kinns, ``{Computer musicking: HCI, CSCW and
+  collaborative digital musical interaction},'' in \emph{Music and
+  Human-Computer Interaction}.\hskip 1em plus 0.5em minus 0.4em\relax Springer,
+  2013, pp. 189--205.
 
 \bibitem{place2010jamoma}
-T.~Place, T.~Lossius, and N.~Peters, ``The jamoma audio graph layer,'' in
+T.~Place, T.~Lossius, and N.~Peters, ``{The jamoma audio graph layer},'' in
   \emph{Proceedings of the 13th International Conference on Digital Audio
   Effects}, 2010, pp. 69--76.
 
 \bibitem{bullock2011integra}
-J.~Bullock and H.~Frisk, \emph{The integra framework for rapid modular audio
-  application development}.\hskip 1em plus 0.5em minus 0.4em\relax Ann Arbor,
-  MI: Michigan Publishing, University of Michigan Library, 2011.
+J.~Bullock and H.~Frisk, ``{The integra framework for rapid modular audio
+  application development},'' in \emph{Proceedings of the International
+  Computer Music Conference}, 2011.
 
 \bibitem{celerier2015ossia}
 J.-M. Celerier, P.~Baltazar, C.~Bossut, N.~Vuaille, J.-M. Couturier, and
-  M.~Desainte-Catherine, ``{OSSIA}: Towards a unified interface for scoring
-  time and interaction,'' in \emph{Proceedings of the TENOR 2015 Conference}.
+  M.~Desainte-Catherine, ``{OSSIA : Towards a Unified Interface for Scoring
+  time and Interaction},'' in \emph{Proceedings of the TENOR 2015 Conference}.
 
 \bibitem{letzlibaudiostream}
-S.~Letz \emph{et~al.}, ``The libaudiostream library,'' 2012.
+\BIBentryALTinterwordspacing
+S.~Letz, ``{Sp{\'e}cification de l'extension LibAudioStream},'' Tech. Rep.,
+  Mar. 2014. [Online]. Available:
+  \url{https://hal.archives-ouvertes.fr/hal-00965269}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Arias:VMO-Score}
-\BIBentryALTinterwordspacing
 J.~Arias, M.~Desainte-Catherine, and S.~Dubnov, ``{Automatic Construction of
   Interactive Machine Improvisation Scenarios from Audio Recordings},'' in
   \emph{4th International Workshop on Musical Metacreation (MUME 2016)}, Paris,
-  France, 2016. [Online]. Available:
-  \url{http://musicalmetacreation.org/buddydrive/file/arias_automatic_construction}
-\BIBentrySTDinterwordspacing
+  France, 2016.
 
 \bibitem{bouche2014programmation}
-D.~Bouche, J.~Bresson, and S.~Letz, ``Programmation and control of faust sound
-  processing in openmusic,'' in \emph{Joint International Computer Music/Sound
-  and Music Computing Conferences (ICMC-SMC)}, 2014.
+D.~Bouche, J.~Bresson, and S.~Letz, ``{Programmation and Control of Faust Sound
+  Processing in OpenMusic},'' in \emph{Joint International Computer Music/Sound
+  and Music Computing Conferences}, 2014.
 
 \bibitem{orlarey2009faust}
-Y.~Orlarey, D.~Fober, and S.~Letz, ``Faust: an efficient functional approach to
-  dsp programming,'' \emph{New Computational Paradigms for Computer Music},
+Y.~Orlarey, D.~Fober, and S.~Letz, ``{Faust: an efficient functional approach
+  to DSP programming},'' \emph{New Computational Paradigms for Computer Music},
   vol. 290, 2009.
 
 \bibitem{seebach2001cranky}
-P.~Seebach, ``The cranky user: The principle of least astonishment,'' in
+P.~Seebach, ``{The cranky user: The Principle of Least Astonishment},'' in
   \emph{IBM DeveloperWorks}, 2001.
 
 \bibitem{siek2001boost}
-J.~G. Siek, L.-Q. Lee, and A.~Lumsdaine, \emph{The Boost Graph Library: User
-  Guide and Reference Manual, Portable Documents}.\hskip 1em plus 0.5em minus
+J.~G. Siek, L.-Q. Lee, and A.~Lumsdaine, \emph{{The Boost Graph Library: User
+  Guide and Reference Manual, Portable Documents}}.\hskip 1em plus 0.5em minus
   0.4em\relax Pearson Education, 2001.
 
 \end{thebibliography}

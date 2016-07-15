@@ -9,10 +9,10 @@
 \usepackage{textcomp}
 \usepackage{xspace}
 \usepackage{float}
-
+\usepackage{acronym}
 %user defined variables
 \def\papertitle{Rethinking the audio workstation: tree-based sequencing with i-score and the LibAudioStream}
-\def\firstauthor{Jean-Michael Celerier}
+\def\firstauthor{Jean-Micha\"el Celerier}
 \def\secondauthor{Myriam Desainte-Catherine}
 \def\thirdauthor{Jean-Michel Couturier}
 
@@ -60,6 +60,8 @@
 \newcommand*{\fasttracker}{\textsc{FastTracker}\xspace}
 \newcommand*{\cubase}{Steinberg \textsc{Cubase}\xspace}
 \newcommand*{\protools}{Avid \textsc{Pro Tools}\xspace}
+\newcommand*{\logic}{Apple \textsc{Logic Pro}\xspace}
+\newcommand*{\samplitude}{Magix \textsc{Samplitude}\xspace}
 \newcommand*{\jamomaaudiograph}{Jamoma \textsc{AudioGraph}\xspace}
 \newcommand*{\integraframework}{\textsc{Integra Framework}\xspace}
 \newcommand*{\openmusic}{\textsc{OpenMusic}\xspace}
@@ -70,6 +72,12 @@
 \newcommand*{\fmod}{\textsc{FMOD}\xspace}
 \newcommand*{\faust}{\textsc{Faust}\xspace}
 \newcommand*{\kyma}{\textsc{Kyma}\xspace}
+\newcommand*{\audiomulch}{\textsc{Audiomulch}\xspace}
+
+\acrodef{TC}{Time Constraint}
+\newcommand*{\cantabileperformer}{Cantabile \textsc{Performer}\xspace}
+\newcommand*{\timeconstraint}{\ac{TC}\xspace}
+\newcommand*{\timeconstraints}{\acp{TC}\xspace}
 
 \begin{document}
 \capstartfalse
@@ -88,24 +96,24 @@ Three examples of interactive musical scores are presented: the recreation of a 
 \section{Introduction}
 Software audio sequencers are generally considered to be digital versions 
 of the traditional tools that are used in a recording studio: tape recorders, 
-mixing desks or effect racks, etc.
+mixing desks, effect racks, etc.
 
 Most of the existing software follow this paradigm very closely, with 
 concepts of tracks, buses, linear time, which are a skeuomorphic reinterpretation of the multi-track tape recorder~\cite{bell2015skeuomorphism}.
 At the other side of the music creation spectrum, we find entirely interaction-oriented tools, 
-such as \maxmsp, \puredata, \csound, or \supercollider, allow to create musical works in programming-oriented 
-environments.
-In-between, one can find tools with limited interaction capabilities but full-fledged audio sequencing support, 
-like \abletonlive, or \bitwigstudio.
-The interaction lies in the triggering of loops and the ability to change the speed on the fly but is mostly separate from the "traditional" sequencer.
+such as \maxmsp, \puredata, \csound, or \supercollider. 
+They allow to create musical works in programming-oriented environments.
+In-between are tools with limited interaction capabilities but full-fledged audio sequencing support, 
+such as \abletonlive, or \bitwigstudio.
+The interaction lies in the triggering of loops and the ability to change the speed on the fly but is mostly separate from the "traditional" sequencer integrated in these software.
 
 In this paper, we present a graphical and hierarchical approach to interactive audio sequencing.
 We integrate the \LibAudioStream audio engine in the interactive control sequencer \iscore.
-This forms an audio sequencing software that allows to author music in a timeline 
+This forms an audio sequencing software that allows to author music in a time-line 
 with the possibility to arbitrarily nest sounds and effects and trigger sounds interactively 
 while keeping the logical coherency wanted by the composer. 
 An extension is introduced to arrange audio effects in an interactive temporal graph.
-For instance, instead of simply applying a chain of effects to an audio track, it is possible to apply temporal sequences of effects: an effect would be enabled for ten seconds, then, if a condition becomes true, another effect would be applied until the musician chooses to stop it.
+For instance, instead of simply applying a chain of effects to an audio track, it is possible to apply temporal sequences of effects: an effect would be enabled for ten seconds, then, if an external condition becomes true, another effect would be applied until the musician chooses to stop it.
 
 We will first present the existing works in advanced audio sequencing and workstations, 
 and give a brief presentation of both \iscore and the \LibAudioStream.
@@ -114,7 +122,7 @@ for rich audio routing capabilities, will be explained.
 Finally, three examples of usage in the graphical interface of \iscore will be provided : a recreation of a standard multi-track player, an interactive score, and an effect graph applied to a sound.
 
 \section{Existing works}
-Outside of the traditional audio sequencer realm, we can find 
+Outside of the traditional audio sequencer realm, there are
 multiple occurences of graphical environments aiming to provide 
 some level of interactivity.
 
@@ -123,21 +131,28 @@ commons paradigms for creating music on a computer: score-based with \MUSIC and 
 patch-based with \maxmsp or \puredata, programming-based with \supercollider and many of the other music creation languages, music trackers such as \fasttracker which were used to make the music in old video game consoles, and multitrack-like such as \cubase, \protools.
 \abletonlive and \bitwigstudio are given their own category thanks to the ability to compose clips of sound interactively.
 
-\drile~\cite{berthaut2010drile} is a virtual reality music software: loops are manipulated and bound together in a 3D environment. Hierarchy is achieved by representing the loops in a tree structure.
+\drile~\cite{berthaut2010drile} is a virtual reality music software. 
+Loops are manipulated and bound together in a 3D environment. 
+Hierarchy is achieved by representing the loops in a tree structure.
 
 \kyma~\cite{scaletti1989kyma} is a hybrid software and hardware environment for sound composition. 
-It offers multiple pre-made facilities for sound creation such as multi-dimensional preset interpolation, sound composition by addition and mutation, and sequential \& parallel sound composition on a timeline.
+It offers multiple pre-made facilities for sound creation such as multi-dimensional preset interpolation, sound composition by addition and mutation, and sequential \& parallel sound composition on a time-line.
+
+\audiomulch~\cite{bencina2005metasurface} is an environment for live music performance, which also provides preset space exploration thanks to the Metasurface concept. 
+\cantabileperformer\footnote{\url{https://www.cantabilesoftware.com/}} is also an environment geared towards live performance, with the ability to trigger sounds, and a temporal ordering. It is closer to the cue metaphor than the sequencer metaphor.
 
 Mobile and web applications are also a way that is more and more used to create music, 
 but their are often embedded in a bigger score or framework and act more as an instrument than other systems.
 An interesting example of web-based sequencer is \jamon~\cite{rosselet2013jam} which allows multiple persons to author music interactively in collaboration by drawing in a web page.
+A deeper overview of the collaborative music authoring environments is given in~\cite{fencott2013computer}.
 
 Finally, modern video game music engines such as \fmod and \wwise allow some level of interactivity: when some event occurs in a video game, then a sound will be played. 
 Automation of parameters is possible, and these environments are geared towards three-dimensional positioning of sound and sound effects such as reverb, echo.
 
-For audio engines, one of the predominant metaphors is the audiograph.
+For low-level audio engines, one of the predominant methods is the audiograph.
 Prime examples are \jamomaaudiograph~\cite{place2010jamoma} and \integraframework~\cite{bullock2011integra}.
-Audio processing is thought of as a graph of audio nodes, where the output of a node can go to the input of another node.
+Audio processing is thought of as a graph of audio nodes, where the output of a node can go to the input of one or multiple other nodes.
+Audio workstations such as \samplitude (with the flexible plug-in routing) and \logic (with the Environment) provide access to the underlying audio graph.
 
 \section{Context}
 In this section, we will present the two tools that are used to achieve 
@@ -149,19 +164,18 @@ The detailed execution semantics are given in~\cite{celerier2015ossia}.
 
 The \LibAudioStream~\cite{letzlibaudiostream} provides the ability to author audio expressions
 by creating and combining streams. The notion of symbolic date, introduced in an extension of the library,
-allows to start and stop the execution of streams at an arbitrary date.
+allows to start and stop the execution of streams at a date not known until the performance.
 
 The goal of this work is to bind the audio capabilities of the \LibAudioStream 
 with the \iscore execution engine and graphical interface, in order to allow 
 the creation of rich hierarchic and interactive musical pieces.
 
 \subsection{Presentation of i-score}
-The main use of \iscore is to communicate and orchestrate other software in a timely manner, 
+The original goal of \iscore is to communicate and orchestrate other software in a timely manner, 
 through the OSC protocol.
 The software can send automations, cue-like OSC messages at a given point in time, and call arbitrary JavaScript functions, in a sequenced environment.
 It supports arbitrary nesting: a score can be embedded in another recursively.
-This is similar to the notion of group tracks in many other sequencers, but 
-there is no limit of depth. 
+This is similar to the notion of group tracks in many other sequencers, but without depth limit. 
 Besides, there is no notion of "track" per se; rather, the composer works with 
 temporal intervals which contains arbitrary data that can be provided by plug-ins.
 
@@ -172,17 +186,18 @@ mappings, speed control.
     For instance, when an OSC parameter fulfills a condition, such as  \lstinline[mathescape]!/a/b $\leq$ 3.14!, then 
     a part of the score can continue.
     \item Conditions allow to execute or disable part of the score according to a boolean condition.
-    It makes if-then-else or switch-case programming construct easy to implement in a temporal way.
+    It makes if-then-else or switch-case programming constructs easy to implement in a temporal way.
     \item Mappings allow to map an input parameter to an output parameter, with a transfer function applied to the input.
     \item The execution speed of hierarchical elements can be controlled during the execution.
 \end{itemize}
 
 A span of time in \iscore might have a fixed or indefinite duration;
-we refer to this span as a Time Constraint since it imposes both a logical and temporal order to the elements before and after it.
+we refer to this span as a \timeconstraint since it imposes both a logical and temporal order to the elements before and after it.
  
-This span of time may contain data by the form of processes: automations, mappings, but also loops and scenarios; a scenario is the process that allows nesting. 
+A \timeconstraint may contain data by the form of processes: automations, mappings, but also loops and scenarios; a scenario is the process that allows nesting. 
+When the \timeconstraint stops, all its processes are killed recursively.
 
-Time Constraints are linked together with Time Nodes, which allows for synchronization and branching of multiple streams of time.
+\timeconstraints are linked together with Time Nodes, which allows for synchronization and branching of multiple streams of time.
 
 An example of the temporal syntax of \iscore is presented in fig.~\ref{fig.iscore-example}.
 It is for instance used by Arias and Dubnov in~\cite{Arias:VMO-Score} to construct a musical environment adapted to improvisation by segmenting pre-recorded audio phrases, to allow constrainted improvisation according to high-level musical structures.
@@ -204,7 +219,8 @@ The \LibAudioStream~\cite{letzlibaudiostream}, developed at GRAME, is a C++ libr
 One of the advantages of using a library instead of a graphical interface is that it provides scripting capabilities to the composer and makes algorithmic music composition easier.
 It has been used with success in \openmusic~\cite{bouche2014programmation}.
 
-Audio sounds and transformations are modeled by streams; an algebra with the expected operations is applied to these streams:serial and parallel composition, mixing, and multi-channel operations.
+Audio sounds and transformations are modeled by streams. 
+An algebra with the expected operations is applied to these streams: serial and parallel composition, mixing, and multi-channel operations.
 Streams are bound together in order to construct complex audio expressions.
 For instance, two sound files can be mixed together with a Mix stream expression: 
 \begin{lstlisting}[language=C++,columns=fullflexible,basicstyle=\ttfamily]
@@ -231,7 +247,7 @@ expression to encapsulate the execution of a virtual audio player,
 in order to allow for hierarchy.
 
 We make the choice to allow for hierarchy by mixing the played streams together.
-This is done in accordance with the principle of least astonishment~\cite{seebach2001cranky} for the composer: 
+This is done in accordance with the principle of least astonishment~\cite{seebach2001cranky} in mind for the composer: 
 in most audio software, the notion of grouping implies that the grouped sounds will be mixed 
 together and routed to a single audio bus.
 
@@ -243,7 +259,7 @@ which requires the creation of a dependency graph between audio nodes.
 
 \subsection{Group audio stream}
 In order to be able to apply hierarchical effects on the streams, 
-we have to introduce a way to use hierarchy in the \LibAudioStream.
+and handle interactivity in recursive groups, we have to introduce a way to use sound hierarchy in the \LibAudioStream.
 
 Our method employs two elements: 
 \begin{itemize}
@@ -263,6 +279,8 @@ We introduce matching objects in the \LibAudioStream:
 	\item A Group audiostream. This particular audiostream, of infinite length, 
 	allows to introduce a Group player in a series of chained streams and takes care of having the Player process its buffers
     regularly.
+    \item A finite loop audiostream.
+    This stream loops over its content after a given duration.
 \end{itemize}
 
 The execution time of the hierarchized objects will be relative to the start time of the Group audiostream.
@@ -280,7 +298,7 @@ The Return stream is infinite in length: to allow for long-lasting audio effects
 like reverb queues or delays, we suppose that we can pull the data from the Send stream at any point in time.
 If a Return stream tries to fetch the data of a Send stream that has not started yet, or that has already finished, a buffer of silence is provided instead.
 
-An important point is that the Send stream must itself be pulled regularly by being played as a sound, either directly or by a stream that would encapsulate it.
+The Send stream must itself be pulled regularly by being played as a sound, either directly or by a stream that would encapsulate it.
 
 An example of such an audiostream graph is presented in fig.~\ref{fig.mixsendreturn}.
 
@@ -299,7 +317,8 @@ to the existing \LibAudioStream structures.
 \begin{itemize}
 	\item Effect chain process: register multiple audio effects one after the other. 
 	For instance:~\\ \emph{Equalizer $\,\to\,$ Distortion $\,\to\,$ Reverb}. ~\\
-	Currently only \faust effects or instruments are supported.
+	Currently only \faust effects or instruments are supported. 
+    Interfaces are provided to allow the extension to other audio plug-in formats.
 	\item Input process: allows to introduce the audio input of a sound card in the stream.
 	\item Sound file: reads a sound file from the filesystem.
 	\item Explicit send and return processes for manual routing.
@@ -309,18 +328,19 @@ to the existing \LibAudioStream structures.
 An important feature of audio workstations is the support for automation, that is, 
 controlling the value of a parameter over time, generally with piecewise continuous functions.
 In \iscore, automation is achieved by sending OSC messages to a remote software.
-Hence, the OSC message tree is modeled as an object tree.
+The OSC messages tree is modeled as an object tree.
 We present the loaded effect plug-ins to this object tree, so that automations 
 and mappings are able to control audio effects and audio routing volume.
 
-An example is given in fig.~\ref{fig.iscoreconstraint}.
+A screen capture of a \timeconstraint with processes is given in fig.~\ref{fig.iscoreconstraint}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.35\textwidth]{figures/mix.png}
-	\caption{An example of a Time Constraint loaded with audio processes in \iscore. 
-		Selecting a particular process shows a complete widget for editing the relevant parameters. On a single Time Constraint, there can be only a single Mixing process, but there is no limit to the amount of other processes: there can be multiple sound files, etc.}
+	\caption{An example of a \timeconstraint loaded with audio processes in \iscore. 
+		Selecting a particular process shows a complete widget for editing the relevant parameters. On a single \timeconstraint, there can be only a single Mixing process (the table at the bottom), but there is no limit to the amount of other processes: there can be multiple sound files, etc.}
 	\label{fig.iscoreconstraint}
 \end{figure}
+
 \subsection{Stream graph}
 One problem caused by the presence of routing is that it is possible 
 to create a data loop: if a Send is directly or indirectly fed its own data through a Return, 
@@ -334,15 +354,16 @@ To prevent this, we create a graph where:
 \end{itemize} 
 
 The graph, implemented with the Boost Graph Library~\cite{siek2001boost} can then be used to 
-check for acyclicity, and return an user error if that is not the case.
-As a byproduct of the imposed acyclicity of the graph, some level of parallel processing may be achieved, as long as causality is respected between nodes. 
-For instance, if two Returns with each their own effect chain are connected to a Send, it is possible to compute these returns on different threads after the current buffer of the Send has been processed.
+check for acyclicity. 
+The user will be notified if that is not the case.
+%As a byproduct of the imposed acyclicity of the graph, some level of parallel processing may be achieved, as long as causality is respected between nodes. 
+%For instance, if two Returns with each their own effect chain are connected to a Send, it is possible to compute these returns on different threads after the current buffer of the Send has been processed.
 
 We provide here the method to build the graph:
 
 % \todo{Disambiguate the user-created sends and the sends required for the model}
 %\paragraph{Vertice creation}
-Vertices are created recursively from the Time Constraints in \iscore: an \iscore document is entirely contained in a top-level Time Constraint.
+Vertices are created recursively from the \timeconstraints in \iscore: an \iscore document is entirely contained in a top-level \timeconstraint.
 
 First, we iterate through all the processes of the given constraint.
 If the process is hierarchical (Scenario, Loop), then we call the algorithm recursively on the process.
@@ -350,7 +371,7 @@ If the process is hierarchical (Scenario, Loop), then we call the algorithm recu
 In the case of the Scenario, it means that we call recursively on all its Constraints.
 In the case of the Loop, we call recursively on its loop pattern Constraint.
 In both cases, we create a Group vertice to model the process. 
-Edges are to be added from each stream in the hierarchical timeline, to the group stream.
+Edges are to be added from each stream in the hierarchical time-line, to the group stream.
 
 If the process is a send or a return, we create a corresponding vertice.
 Then, we create inner Sends for all the streams and a vertice for the Constraint itself.
@@ -360,7 +381,7 @@ Once all the vertices are created, the edges are added as mentioned before.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.35\textwidth]{figures/graph1.eps}
-	\caption{Translation of the Time Constraint of fig.~\ref{fig.iscoreconstraint} in a dependency graph.
+	\caption{Translation of the \timeconstraint of fig.~\ref{fig.iscoreconstraint} in a dependency graph.
 		The edges in black represent the intra-Constraint connections. 
 		The edges in blue (resp. orange) represent a connection to a visible output of 
 		the Constraint. The percentages represent the level of mixing of the stream.
@@ -368,46 +389,49 @@ Once all the vertices are created, the edges are added as mentioned before.
 	\label{fig.graph}
 \end{figure}
 
-As can be seen, there is an ordering between nodes of the graph: the parentmost vertice
+As mentioned before, there is an ordering between nodes of the graph: the parentmost vertice
 has to be pulled before the others to reflect the causality.
 
 %\todo{Comparer à Ableton ou il est possible pour chaque piste de choisir son entrée et sa sortie.}
 
-Inside a Time Constraint, causality also has to be enforced. 
+Inside a \timeconstraint, causality also has to be enforced. 
 Since a mixing matrix is provided, we have to ensure that an effect bus cannot be routed in 
 itself in a loop. 
-To prevent this at the user interface level, we disable by default the mixing of audio effect chains into each other. In fig.~\ref{fig.graph}, we show the resulting graph for a Time Constraint. 
+To prevent this at the user interface level, we disable by default the mixing of audio effect chains into each other. In fig.~\ref{fig.graph}, we show the resulting graph for a \timeconstraint. 
 
-Hence, the graph is topologically sorted, which allows for the creation of the streams afterwards.
-
+When the graph is verified acyclic, we perform the stream creation by iterating over the list of topologically sorted vertices.
 
 %\todo{placement de la chaine de gain, time stretch, etc.}
 \subsection{Stream creation}
 We detail in this section the stream creation for particular elements.
 \subsubsection{Scenario}
-An \iscore scenario is an arrangement of temporal structures, as shown in fig.~\ref{fig.iscore-example}; it's a timeline of its own.
-Since the duration of these structures can change at run-time due to interactivity, it is not meaningful to use the tools provided by the \LibAudioStream: sequence stream, parallel stream, mix stream.
-We instead use the audio player concept to organize our elements in time.
+An \iscore scenario is an arrangement of temporal structures, as shown in fig.~\ref{fig.iscore-example}; it is a time-line of its own.
+Since the execution and duration of these structures can change at run-time due to interactivity and hierarchy, it is not meaningful to directly use the tools provided by the \LibAudioStream: sequence stream, parallel stream, mix stream.
+We instead use the Group player to organize our elements in time.
 
 The creation of the Scenario stream is done as follows: 
 \begin{enumerate}
 	\item A Group player is created.
 	\item For each Time Node in the scenario, a symbolic date is generated.
-	\item For each Time Constraint in the scenario, a stream is built; it is started and stopped at the symbolic date matching its start and end Time Nodes in the group player.
+	\item For each \timeconstraint in the scenario, a stream is built; it is started and stopped at the symbolic date matching its start and end Time Nodes in the group player.
 \end{enumerate}
 
 The Audio stream of this process is the group player.
+In order to enforce sample-accuracy whenever possible, if the i-score structures have a fixed date, we preset this date to its computed value.
+If there is no interactivity involved, a sound following another will start at the audio sample one past the end of the first one. 
+As soon as a sound's execution time is fixed, an algorithm checks for all the following sounds whose date could also be fixed.
 
 \subsubsection{Loop}
 Due to their interactive nature, loops in \iscore can be entirely different from 
 one iteration to another. 
-They are similar to traditional programming language \texttt{do-while} constructs, than audio sequencer loops.
-This prevents us from using the \LibAudioStream's loop stream, since 
-it expects a looping sound whose duration will not change from an iteration to another.
-Instead, we wrap the loop pattern Time Constraint's audiostream in a Group player, reset the stream and start it again upon looping.
+They are more similar to traditional programming language \texttt{do-while} constructs, than audio sequencer loops.
+This prevents us from directly using the \LibAudioStream's loop stream, since it expects a looping sound of finite duration.
+Instead, if the loop is interactive, we wrap the loop pattern \timeconstraint's audiostream in a Group player, reset the stream and start it again upon looping.
+If the loop is not interactive, we can reset it at a fixed interval of time with the fixed loop stream introduced earlier.
+This allows for sample accurate hierarchic looping with \iscore's processes semantics.
 
 \subsubsection{Time Constraint}
-As explained earlier, a Time Constraint is a process container.
+As explained earlier, a \timeconstraint is a process container.
 Such processes can be the sound processes presented in section~\ref{sec.processes}, and 
 the control processes such as automation, etc.
 
@@ -416,19 +440,19 @@ The creation of the Constraint audio stream is done as follows:
     \item For each sound-generating process, a stream and a send are created.
     \item For each effect chain, the effects are instantiated and an effect stream is created with a mix of the returns of the elements to which this effect applies.
     A send is also created.
-    \item The mixing matrix is used to create mix audio streams from the sends and returns, which are routed either in the user-created sends, or in the stream corresponding to the Time Constraint.
-    A time-stretching audio stream is inserted before the send: it is linked to the execution speed of the time constraint in \iscore which can vary interactively.
+    \item The mixing matrix is used to create mix audio streams from the sends and returns, which are routed either in the user-created sends, or in the stream corresponding to the \timeconstraint.
+    A time-stretching audio stream is inserted before the send: it is linked to the execution speed of the \timeconstraint in \iscore which can vary interactively.
 \end{enumerate} 
 
 \subsubsection{A note on real-time performance}
 Since a real-time audio input is provided, we ought to be able to 
 use the system as a multi-effect, hence with the lowest possible latency.
 The time-stretching effect itself may impose a latency high enough to make 
-playing impossible.
+playing through the system impossible.
 
 To solve this, when creating the graph, the parents of each Input node are recursively marked 
 with a flag to indicate real-time processing. 
-The Time Constraints with this flag will not be able to be time-stretched, but will only 
+The \timeconstraints with this flag will not be able to be time-stretched, and will only 
 be affected by the latency due to the effects manually introduced by the composer.
 
 %Cas de la boucle avec un coup A, un coup B selon la condition ? 
@@ -445,8 +469,8 @@ We present in this part three examples of usage of the presented system.
 \subsection{Recreation of a multi-track sequencer}
 The first example, in fig.\ref{fig.score1}, is a recreation of the multitrack audio sequencer metaphor, with the primitives presented in this paper.
  
-This score has three tracks, \textbf{Guitar}, \textbf{Bass}, and \textbf{Drums}, which are implemented with three Time Constraints.
-Each Time Constraint has a Sound process and an Effect process; the Mixing process is hidden for clarity.
+This score has three tracks, \textbf{Guitar}, \textbf{Bass}, and \textbf{Drums}, which are implemented with three \timeconstraints.
+Each \timeconstraint has a Sound process and an Effect process; the Mixing process is hidden for clarity.
 The bass track is a looping one-note sound. Automations are applied either at the "track" level, as for the drums, or at the "clip" level, as for the guitar \textbf{outro} clip. 
 However, in the model there is no actual difference between track and clip, it is solely a particular organization of the score.
  
@@ -478,15 +502,15 @@ If no external event happens, after some time, when reaching the end of the trig
     \caption{An interactive musical score.}
     \label{fig.score2}
 \end{figure}
-
+\newpage
 \subsection{Temporal effect graph}
 This last example, in fig.~\ref{fig.score3} shows how to arrange not sound, but sound processing temporally.
 In this case, we have a sound playing, which is routed in the send process.
-Then, a hierarchical scenario is used, and contains multiple Time Constraints, two of which have return processes connecte to the previously created send.
+Then, a hierarchical scenario with multiple \timeconstraints is used. Two \timeconstraints have return processes connected to the previously created send.
 Automations are applied to parameters of these effects.
 
 \textbf{Second effect} will be triggered after an external event happens.
-By using loops, effects, and time constraints with infinite durations, this same mechanism would allow to simulate a guitar pedalboard with switchable effects, and the added possibility to create transitions between effects.
+By using loops, effects, and \timeconstraints with infinite durations, this same mechanism would allow to simulate a guitar pedalboard with switchable effects, and the added possibility to create transitions between effects.
 
 \begin{figure}[h]
     \centering
@@ -509,9 +533,9 @@ Likewise, the system mostly handles audio and OSC data; MIDI is implemented at a
 Another unhandled question is effect delay compensation: sometimes, audio algorithms must introduce multiple frames of latency in their processing chain, for instance because they have to accumulate a certain amount of data.
 This is not taken into account here, hence seemingly synchronized sounds may desynchronize themselves if this latency is not accounted for.
 
-Finally, in many cases optimisations could be achieved to reduce the amount of data structures being created. For instance, when a single sound file is in a Time Constraint, a simpler stream expression could be created.
+Finally, in many cases optimisations could be achieved to reduce the amount of data structures being created. For instance, when a single sound file is in a \timeconstraint, a simpler stream expression could be created.
 
-The next steps for this research includes these points, the handling of real-time audio input, and interactive edition: modifying the score while it is already playing.
+The next steps for this research includes these points, work on sound spatialization, and interactive edition: modifying the score while it is already playing.
 
 \begin{acknowledgments}
     This research was supported by the SCRIME (Studio de Création et de Recherche en Informatique et Musiques Expérimentales, \url{scrime.labri.fr}) which is funded by the French Culture Ministry. 
@@ -520,9 +544,6 @@ The next steps for this research includes these points, the handling of real-tim
 	This work was also supported by an ANRT CIFRE convention with the company Blue Yeti under funding 1181-2014. 
 \end{acknowledgments} 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%bibliography here
 \bibliography{smc2016template}
 
 \end{document}
