@@ -31,6 +31,20 @@ A.~M{\"o}llenkamp, ``{Paradigms of Music Software Development},'' in
   \emph{Proceedings of the 9th Conference on Interdisciplinary Musicology},
   2014.
 
+\bibitem{vercoe1990real}
+B.~Vercoe and D.~Ellis, ``Real-time csound: Software synthesis with sensing and
+  control,'' in \emph{Proceedings of the International Computer Music
+  Conference}, 1990, pp. 209--211.
+
+\bibitem{puckette1996pure}
+M.~Puckette \emph{et~al.}, ``Pure data: another integrated computer music
+  environment,'' \emph{Proceedings of the second intercollege computer music
+  concerts}, pp. 37--41, 1996.
+
+\bibitem{mccartney2002rethinking}
+J.~McCartney, ``Rethinking the computer music language: Supercollider,''
+  \emph{Computer Music Journal}, vol.~26, no.~4, pp. 61--68, 2002.
+
 \bibitem{berthaut2010drile}
 F.~Berthaut, M.~Desainte-Catherine, and M.~Hachet, ``{Drile: an immersive
   environment for hierarchical live-looping},'' in \emph{New Interfaces for
